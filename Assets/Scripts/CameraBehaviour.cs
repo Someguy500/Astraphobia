@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class CameraBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Transform trackedObject;
+    public float updateSpeed = 3f;
+    public Vector2 trackingOffset;
+    private Vector3 offset;
+    
     void Start()
     {
-        
+        offset = (Vector3)trackingOffset;
+        offset.z = transform.position.z - trackedObject.position.z;
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        
+        transform.position = Vector3.MoveTowards(transform.position, trackedObject.position + offset,
+            updateSpeed * Time.deltaTime);
     }
 }
