@@ -11,12 +11,13 @@ public class CameraBehaviour : MonoBehaviour
     
     void Start()
     {
-        offset = (Vector3)trackingOffset;
-        offset.z = transform.position.z - trackedObject.position.z;
+        
     }
 
     void LateUpdate()
     {
+        offset = (Vector3)trackingOffset;
+        offset.z = transform.position.z - trackedObject.position.z;
         transform.position = Vector3.MoveTowards(transform.position, trackedObject.position + offset,
             updateSpeed * Time.deltaTime);
     }
