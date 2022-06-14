@@ -275,6 +275,10 @@ MonoBehaviour:
   trackedObject: {fileID: 1382705618}
   updateSpeed: 10
   trackingOffset: {x: 0, y: 1}
+  cam: {fileID: 0}
+  defaultZoom: 2
+  maxZoom: 5
+  zoomSpeed: 10
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
