@@ -23,11 +23,11 @@ public class CameraBehaviour : MonoBehaviour
 
     void LateUpdate()
     {
-        //Tracking Player
-        offset = (Vector3)trackingOffset;
-        offset.z = transform.position.z - trackedObject.position.z;
-        transform.position = Vector3.MoveTowards(transform.position, trackedObject.position + offset,
-            updateSpeed * Time.deltaTime);
+        // //Tracking Player  - No longer used, swapped to CineMachine
+        // offset = (Vector3)trackingOffset;
+        // offset.z = transform.position.z - trackedObject.position.z;
+        // transform.position = Vector3.MoveTowards(transform.position, trackedObject.position + offset,
+        //     updateSpeed * Time.deltaTime);
         
         
     }
