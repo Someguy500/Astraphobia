@@ -23,6 +23,25 @@ public class CameraBehaviour : MonoBehaviour
     
     //Test
     
+    //(Below was an attempt to change orthographicSize in the main camera, but i didn't realize we were using CM vcam1)
+    /*void Update()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            if (cam.orthographicSize < 5)
+            {
+                cam.orthographicSize = cam.orthographicSize + 0.01f;
+            }
+        }
+        else
+        {
+            if (cam.orthographicSize > 2)
+            {
+                cam.orthographicSize = cam.orthographicSize - 0.01f;
+            }
+        }
+    }*/
+    
     void LateUpdate()
     {
         // //Tracking Player  - No longer used, swapped to CineMachine
