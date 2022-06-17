@@ -9,6 +9,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float speed = 5f;
     public float jumpForce = 5f;
     private bool isGrounded = true;
+    private bool isZooming = false;
     private Rigidbody2D rb;
     private BoxCollider2D col;
     private float extraJumpSpace = 0.02f;
@@ -47,15 +48,28 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
         GroundedCheck();
+        
         float xMove = Input.GetAxisRaw("Horizontal");
-        transform.Translate(new Vector3(xMove, 0, 0) * (speed * Time.deltaTime));
-
-        if (Input.GetKeyDown(KeyCode.Space)&& (isGrounded == true) )
+        if (isZooming == false)
         {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            //(just in case you wanted to set jump speed instead of adding)
-            //rigidbody.velocity.y = jumpForce;
+            transform.Translate(new Vector3(xMove, 0, 0) * (speed * Time.deltaTime));
+
+            if (Input.GetKeyDown(KeyCode.Space) && (isGrounded == true))
+            {
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                //(just in case you wanted to set jump speed instead of adding)
+                //rigidbody.velocity.y = jumpForce;
+            }
+
+            if (isGrounded == true && Input.GetAxisRaw("Horizontal") == 0 && Input.GetMouseButton(1) == true)
+            {
+                isZooming = true;
+            }
         }
-            
+        else if (Input.GetMouseButton(1) == false)
+        {
+            isZooming = false;
+        }
+        
     }
 }
