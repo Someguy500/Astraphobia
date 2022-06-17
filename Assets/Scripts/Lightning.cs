@@ -7,8 +7,9 @@ using UnityEngine;
 
 public class Lightning : MonoBehaviour
 {
-    private Vector2 start, end;
-    private float thickness;
+    public Vector2 start;
+    public Vector2 end;
+    public float thickness;
 
     public GameObject startCap, endCap, lineSegment;
 
