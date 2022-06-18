@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8046378395131416294}
   - component: {fileID: 937138930635991346}
   m_Layer: 0
-  m_Name: Lightning
+  m_Name: Lightning Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

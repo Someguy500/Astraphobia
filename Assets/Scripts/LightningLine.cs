@@ -5,7 +5,7 @@ using UnityEngine;
 //How to Generate Shockingly Good 2D Lightning Effects in Unity (C#) by Aaron Davis
 //URL : https://gamedevelopment.tutsplus.com/tutorials/how-to-generate-shockingly-good-2d-lightning-effects-in-unity-c--cms-21275
 
-public class Lightning : MonoBehaviour
+public class LightningLine : MonoBehaviour
 {
     public Vector2 start;
     public Vector2 end;
@@ -22,7 +22,9 @@ public class Lightning : MonoBehaviour
 
     public void SetColor(Color c)
     {
-        
+        startCap.GetComponent<SpriteRenderer>().color = c;
+        endCap.GetComponent<SpriteRenderer>().color = c;
+        lineSegment.GetComponent<SpriteRenderer>().color = c;
     }
 
     public void Draw()
