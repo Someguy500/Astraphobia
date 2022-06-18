@@ -28,7 +28,7 @@ public class LightningManager : MonoBehaviour
         {
             GameObject bolt = (GameObject)Instantiate(boltPrefab);
 
-            bolt.transform.parent = p.transform;
+            bolt.transform.parent = p.transform.GetChild(0);
             bolt.GetComponent<LightningBolt>().Initialize(25);
             bolt.SetActive(false);
             inactiveBolts.Add(bolt);
