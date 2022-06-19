@@ -65,8 +65,8 @@ public class LightningBolt : MonoBehaviour
         
         positions.Sort();
 
-        const float sway = 80;
-        const float jaggedness = 1 / sway;
+        const float sway = 5;
+        const float jaggedness = 0.5f / sway;
         float spread = 1f;
 
         Vector2 prevPoint = start;

@@ -40,6 +40,8 @@ public class LightningManager : MonoBehaviour
         GameObject boltObj;
         LightningBolt bolt;
 
+        pos1 = transform.GetChild(1).position;
+
         int activeCount = activeBolts.Count;
 
         for (int i = activeCount - 1; i >= 0; i--)
@@ -57,23 +59,11 @@ public class LightningManager : MonoBehaviour
         }
         
         if(Input.GetMouseButtonDown(0))
-        {
-            if(clicks == 0)
-            {
-                Vector3 temp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                pos1 = new Vector2(temp.x, temp.y);
-            }
-            else if(clicks == 1)
-            {
-                Vector3 temp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                pos2 = new Vector2(temp.x, temp.y);
+        { 
+            Vector3 temp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            pos2 = new Vector2(temp.x, temp.y);
                  
-                CreatePooledBolt(pos1,pos2, Color.white, 1f);
-            }
-             
-            clicks++;
-             
-            if(clicks > 1) clicks = 0;
+            CreatePooledBolt(pos1,pos2, Color.white, 1f);
         }
          
         for(int i = 0; i < activeBolts.Count; i++)
