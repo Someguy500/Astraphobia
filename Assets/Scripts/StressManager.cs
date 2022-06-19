@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StressManager : MonoBehaviour
 {
-    public static float stressLvl = 100f;
+    public static float stressLvl = 0;
     public static bool isDead = false;
     private bool stop = false;
 
@@ -16,9 +16,10 @@ public class StressManager : MonoBehaviour
     }
     public void stressBuild()
     {
-        if (stressLvl <= 100 && stressLvl > 1 && isDead == false) 
+        if (stressLvl >= 0 && stressLvl <= 100 && isDead == false) 
         {
-            stressLvl -= 20f * (Time.deltaTime); //scalable stressLvl decrement
+            stressLvl += 10f * (Time.deltaTime); //scalable stressLvl decrement
+            Debug.Log(stressLvl);
         }
         else 
         {
