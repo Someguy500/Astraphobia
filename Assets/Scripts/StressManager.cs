@@ -5,14 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class StressManager : MonoBehaviour
 {
-    public static float stressLvl = 0;
-    public static bool isDead = false;
-    private bool stop = false;
+    public static float stressLvl;
+    public static bool isDead;
+    private bool stop;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        stop = false;
+        isDead = false;
+        stressLvl = 0;
     }
     public void stressBuild()
     {
