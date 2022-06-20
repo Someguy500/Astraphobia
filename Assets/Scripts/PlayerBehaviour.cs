@@ -14,6 +14,7 @@ public class PlayerBehaviour : MonoBehaviour
     private BoxCollider2D col;
     private float extraJumpSpace = 0.02f;
     [SerializeField] private LayerMask platLayerMask;
+    [SerializeField] private float sizeScale = 0.25f;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,9 +28,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void GroundedCheck()
     {
-        RaycastHit2D groundRayL = Physics2D.Raycast(new Vector2(rb.position.x-(col.size.x/2), rb.position.y), Vector2.down,col.size.y+extraJumpSpace, platLayerMask);
-        RaycastHit2D groundRayR = Physics2D.Raycast(new Vector2(rb.position.x+(col.size.x/2), rb.position.y), Vector2.down,col.size.y+extraJumpSpace, platLayerMask);
-        RaycastHit2D groundRayB = Physics2D.Raycast(new Vector2(rb.position.x-(col.size.x/2), rb.position.y+extraJumpSpace), Vector2.right,col.size.x, platLayerMask);
+        RaycastHit2D groundRayL = Physics2D.Raycast(new Vector2(rb.position.x-((col.size.x/2)*sizeScale), rb.position.y), Vector2.down,(col.size.y+extraJumpSpace)*sizeScale, platLayerMask);
+        RaycastHit2D groundRayR = Physics2D.Raycast(new Vector2(rb.position.x+((col.size.x/2)*sizeScale), rb.position.y), Vector2.down,(col.size.y+extraJumpSpace)*sizeScale, platLayerMask);
+        RaycastHit2D groundRayB = Physics2D.Raycast(new Vector2(rb.position.x-((col.size.x/2)*sizeScale), (rb.position.y+extraJumpSpace+col.size.y)*sizeScale), Vector2.right,col.size.x*sizeScale, platLayerMask);
         
         if (groundRayL.collider == null && groundRayR.collider == null && groundRayB.collider == null)
         {
