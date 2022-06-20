@@ -51,7 +51,7 @@ public class StressManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse1) && stop == false) 
+        if (Input.GetKeyDown(KeyCode.Mouse0) && stop == false) 
         {
             StartCoroutine(stressDecreaseTime());
         }

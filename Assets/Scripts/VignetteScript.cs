@@ -26,44 +26,41 @@ public class VignetteScript : MonoBehaviour
 
     public void vignetteLink()
     {
-        
-        if(StressManager.stressLvl >= 0 && StressManager.stressLvl <= 50)
-        {
-            for (int i = 0; i < 3; i++) vignette.intensity.Override(Mathf.Clamp(0.4f * (Mathf.Sin(Time.time) + i), 0.0f, 0.9f));
-            for (int i = 0; i < 3; i++) volume.weight = (Mathf.Clamp(0.4f * (Mathf.Sin(Time.time) + i), 0.5f, 0.9f));
-        }
-        else if(StressManager.stressLvl > 50 && StressManager.stressLvl <= 100)
-        {
-            for (int i = 0; i < 3; i++) vignette.intensity.Override(Mathf.Clamp(0.6f * (Mathf.Sin(Time.time) + i), 0.0f, 0.9f));
-            volume.weight = 1f;
-        }
+
         
 
+        for (int i = 0; i < 3; i++) volume.weight = (Mathf.Clamp(0.4f * (Mathf.Sin(Time.time) + i), 0.5f, 0.9f));
+        volume.weight = 0.8f;
+        StartCoroutine(Period());
+    }
 
+    IEnumerator Period()
+    {
+        yield return new WaitForSeconds(0.4f);
+        volume.weight = 0.6f;
     }
 
     IEnumerator Delay()
     {
-        yield return new WaitForSeconds(0.2f);
         vignetteLink();
+        yield return new WaitForSeconds(0.7f);
+        volume.weight = 0.9f;
 
     }
 
     private void Update()
     {
-
-
-        if (Input.GetKey(KeyCode.Mouse1) && StressManager.stressLvl <= 100)
+        if (Input.GetKey(KeyCode.Mouse0) && StressManager.stressLvl <= 100)
         {
             StartCoroutine(Delay());
-      
         }
 
+        for (int i = 0; i < 3; i++) vignette.intensity.Override(Mathf.Clamp((StressManager.stressLvl/100) * (Mathf.Sin(Time.time) + i), 0.0f, 0.9f));
 
-/*        if (volume.weight > 0) //clamping values back and forth 
-        {
-            for (int i = 0; i < 3; i++) volume.weight = (Mathf.Clamp(0.4f * (Mathf.Sin(Time.time) + i), 0.0f, 0.9f));
-        }*/
+        /*        if (volume.weight > 0) //clamping values back and forth 
+                {
+                    for (int i = 0; i < 3; i++) volume.weight = (Mathf.Clamp(0.4f * (Mathf.Sin(Time.time) + i), 0.0f, 0.9f));
+                }*/
 
 
     }
