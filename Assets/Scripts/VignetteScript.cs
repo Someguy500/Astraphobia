@@ -27,25 +27,26 @@ public class VignetteScript : MonoBehaviour
     public void vignetteLink()
     {
 
-        
 
-        for (int i = 0; i < 3; i++) volume.weight = (Mathf.Clamp(0.4f * (Mathf.Sin(Time.time) + i), 0.5f, 0.9f));
-        volume.weight = 0.8f;
+        for (int i = 0; i < 3; i++) volume.weight = (Mathf.Clamp(0.4f * (Mathf.Sin(Time.time) + i), 0.6f, 0.7f));
+        volume.weight = 0.6f;
         StartCoroutine(Period());
+
     }
 
     IEnumerator Period()
     {
-        yield return new WaitForSeconds(0.4f);
-        volume.weight = 0.6f;
+        yield return new WaitForSeconds(0.3f);
+        volume.weight = 1f;
     }
 
     IEnumerator Delay()
     {
         vignetteLink();
-        yield return new WaitForSeconds(0.7f);
-        volume.weight = 0.9f;
-
+        yield return new WaitForSeconds(0.4f);
+        volume.weight = 0;
+        StartCoroutine(Period());
+        volume.weight = 0.8f;
     }
 
     private void Update()

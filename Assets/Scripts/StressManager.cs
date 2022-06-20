@@ -18,7 +18,7 @@ public class StressManager : MonoBehaviour
     {
         if (stressLvl >= 0 && stressLvl <= 100 && isDead == false) 
         {
-            stressLvl += 10f * (Time.deltaTime); //scalable stressLvl decrement
+            stressLvl += 30f * (Time.deltaTime); //scalable stressLvl decrement
             Debug.Log(stressLvl);
         }
         else 
@@ -51,7 +51,7 @@ public class StressManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && stop == false) 
+        if (Input.GetKey(KeyCode.Mouse0) && stop == false) 
         {
             StartCoroutine(stressDecreaseTime());
         }
