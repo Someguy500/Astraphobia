@@ -1025,11 +1025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4974c0fb5a3038449bdf15f497debdc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  speed: 3
-=======
   speed: 2
->>>>>>> 300a7de27badc2abe12961a6ea3ee89c539dcaba
   jumpForce: 3
   platLayerMask:
     serializedVersion: 2
