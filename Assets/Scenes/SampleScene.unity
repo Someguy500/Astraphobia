@@ -579,7 +579,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1752464436}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &831115947
 GameObject:
@@ -650,6 +650,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1408383382}
+  - {fileID: 1130367677}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -683,7 +684,7 @@ GameObject:
   - component: {fileID: 891518073}
   - component: {fileID: 891518072}
   m_Layer: 6
-  m_Name: level 1 platform
+  m_Name: Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -730,7 +731,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5d714c30d5d8a754b9679952eda0353f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ecf2764a4ee11cf49a16fbf934c05331, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -748,13 +749,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891518069}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1752464436}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &891518072
 Rigidbody2D:
@@ -840,29 +841,6 @@ PolygonCollider2D:
       - {x: -3.6226466, y: -6.5066686}
     - - {x: 18.248123, y: -4.9513}
       - {x: 6.795621, y: -4.891845}
-      - {x: 5.703125, y: -1.6210938}
-      - {x: 5.8984375, y: -1.4257812}
-      - {x: 5.859375, y: -0.68359375}
-      - {x: 5.546875, y: 1.2695312}
-      - {x: 5.5078125, y: 2.0507812}
-      - {x: 5.234375, y: 3.7304688}
-      - {x: 5.0390625, y: 4.4335938}
-      - {x: 4.6875, y: 5.6445312}
-      - {x: 4.6484375, y: 5.9570312}
-      - {x: 4.4140625, y: 6.7773438}
-      - {x: 4.3359375, y: 6.9726562}
-      - {x: 4.1796875, y: 7.1289062}
-      - {x: 4.0234375, y: 7.0898438}
-      - {x: 3.5546875, y: 6.5429688}
-      - {x: 2.734375, y: 5.6054688}
-      - {x: 2.734375, y: 5.2539062}
-      - {x: 2.890625, y: 3.9648438}
-      - {x: 3.359375, y: 1.0351562}
-      - {x: 3.828125, y: -0.72265625}
-      - {x: 3.8671875, y: -1.5039062}
-      - {x: 3.8671875, y: -2.6757812}
-      - {x: 3.75, y: -3.1835938}
-      - {x: 3.75, y: -3.9648438}
       - {x: 3.984375, y: -4.9023438}
       - {x: 3.046875, y: -4.9804688}
       - {x: 3.125, y: -5.1757812}
@@ -944,7 +922,7 @@ ParticleSystemRenderer:
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.5
+  m_MaxParticleSize: 0.2
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
@@ -1160,7 +1138,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0.39215687}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1222,8 +1200,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 0.1
+      scalar: 0.5
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1545,7 +1523,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1606,7 +1584,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 259.48, y: 1, z: 1}
+    m_Scale: {x: 1000, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -3777,7 +3755,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    separateAxes: 0
+    separateAxes: 1
     frequency: 0.5
     damping: 1
     octaves: 1
@@ -5684,13 +5662,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130367674}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.17, y: 4.54, z: -1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18.16, y: 5, z: 9}
   m_LocalScale: {x: 0.075, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 831115949}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1382705616
 GameObject:
@@ -5706,7 +5684,7 @@ GameObject:
   - component: {fileID: 1382705619}
   - component: {fileID: 1382705621}
   m_Layer: 0
-  m_Name: Test Player
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5960,6 +5938,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 891518071}
   - {fileID: 722206565}
   m_Father: {fileID: 0}
   m_RootOrder: 3
