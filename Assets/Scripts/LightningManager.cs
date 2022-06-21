@@ -9,13 +9,21 @@ using UnityEngine;
 public class LightningManager : MonoBehaviour
 {
     public GameObject boltPrefab;
+    public float lightningDelay = 0.5f;
+
+    private CameraZoomOutTest zoomCam;
 
     private List<GameObject> activeBolts;
     private List<GameObject> inactiveBolts;
     private int maxBolts = 25;
 
-    private int clicks = 0;
     private Vector2 pos1, pos2;
+    private float cd;
+
+    private void Awake()
+    {
+        zoomCam = GameObject.Find("Player Camera").GetComponent<CameraZoomOutTest>();
+    }
 
     private void Start()
     {
@@ -40,6 +48,7 @@ public class LightningManager : MonoBehaviour
         GameObject boltObj;
         LightningBolt bolt;
 
+        cd += Time.deltaTime;
         pos1 = transform.GetChild(1).position;
 
         int activeCount = activeBolts.Count;
@@ -58,11 +67,12 @@ public class LightningManager : MonoBehaviour
             }
         }
         
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetKey(KeyCode.Mouse0) && zoomCam.isFullZoom && cd >= lightningDelay)
         { 
             Vector3 temp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             pos2 = new Vector2(temp.x, temp.y);
-                 
+
+            cd = 0;
             CreatePooledBolt(pos1,pos2, Color.white, 1f);
         }
          

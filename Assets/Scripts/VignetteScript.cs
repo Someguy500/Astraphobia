@@ -93,20 +93,14 @@ public class VignetteScript : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0) && StressManager.stressLvl <= 100) 
         {
             StartCoroutine(Delay());
-
         }
 
- 
-
         for (int i = 0; i < 3; i++) vignette.intensity.Override(Mathf.Clamp((StressManager.stressLvl / 100) * (Mathf.Sin(Time.time) + i), 0.0f, 1f)); //Constant Vignette Values Bouncing
-
 
         /*        if (volume.weight > 0) //clamping values back and forth 
                 {
                     for (int i = 0; i < 3; i++) volume.weight = (Mathf.Clamp(0.4f * (Mathf.Sin(Time.time) + i), 0.0f, 0.9f));
                 }*/
-
-
     }
 
 }
