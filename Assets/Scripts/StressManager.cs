@@ -50,13 +50,18 @@ public class StressManager : MonoBehaviour
         Debug.Log(stressLvl);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void stressLightning()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && stop == false) 
+        if (Input.GetKey(KeyCode.Mouse0) && stop == false)
         {
             StartCoroutine(stressDecreaseTime());
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        stressLightning(); //Method for calling from lightning script
         
 
     }
