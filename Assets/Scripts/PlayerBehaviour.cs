@@ -62,7 +62,7 @@ public class PlayerBehaviour : MonoBehaviour
                 //rigidbody.velocity.y = jumpForce;
             }
 
-            if (isGrounded == true && Input.GetAxisRaw("Horizontal") == 0 && Input.GetMouseButton(1) == true)
+            if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetMouseButton(1) == true)
             {
                 isZooming = true;
             }
