@@ -38,7 +38,7 @@ public class LightningBolt : MonoBehaviour
     {
         tint = c;
         alpha = 1.5f;
-        fadeSpeed = 0.001f;
+        fadeSpeed = 0.01f;
         
         //Create bolt
         if (Vector2.Distance(end, start) <= 0)
