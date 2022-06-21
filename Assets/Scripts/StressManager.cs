@@ -18,9 +18,9 @@ public class StressManager : MonoBehaviour
     }
     public void stressBuild()
     {
-        if (stressLvl >= 0 && stressLvl <= 100 && isDead == false) 
+        if (stressLvl >= 0 && stressLvl <= 100 && isDead == false)
         {
-            stressLvl += 30f * (Time.deltaTime); //scalable stressLvl decrement
+            stressLvl += 1f; //scalable stressLvl decrement
             Debug.Log(stressLvl);
         }
         else 
@@ -53,19 +53,14 @@ public class StressManager : MonoBehaviour
         Debug.Log(stressLvl);
     }
 
-    public void stressLightning()
+    public void LightningStrike()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && stop == false)
-        {
+        if (!stop)
             StartCoroutine(stressDecreaseTime());
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        stressLightning(); //Method for calling from lightning script
-        
-
     }
 }

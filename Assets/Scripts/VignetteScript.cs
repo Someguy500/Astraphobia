@@ -65,9 +65,8 @@ public class VignetteScript : MonoBehaviour
         if (StressManager.stressLvl >= 20f)
         {
             volume.weight = 0.5f;
-
         }
-        if (StressManager.stressLvl >= 40f)
+        else if (StressManager.stressLvl >= 40f)
         {
             volume.weight = 0.6f;
         }
@@ -85,15 +84,17 @@ public class VignetteScript : MonoBehaviour
             volume.weight = 0.9f;
             GlobalLight2D.intensity = 0.1f;
         }
-
     }
 
+    public void LightningStrike()
+    {
+        if (StressManager.stressLvl <= 100) 
+            StartCoroutine(Delay());
+    }
+    
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && StressManager.stressLvl <= 100) 
-        {
-            StartCoroutine(Delay());
-        }
+        
 
         for (int i = 0; i < 3; i++) vignette.intensity.Override(Mathf.Clamp((StressManager.stressLvl / 100) * (Mathf.Sin(Time.time) + i), 0.0f, 1f)); //Constant Vignette Values Bouncing
 

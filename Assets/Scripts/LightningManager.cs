@@ -9,9 +9,11 @@ using UnityEngine;
 public class LightningManager : MonoBehaviour
 {
     public GameObject boltPrefab;
-    public float lightningDelay = 0.5f;
+    public float lightningDelay = 2f;
 
     private CameraZoomOutTest zoomCam;
+    private StressManager stressManager;
+    private VignetteScript postPros;
 
     private List<GameObject> activeBolts;
     private List<GameObject> inactiveBolts;
@@ -23,6 +25,8 @@ public class LightningManager : MonoBehaviour
     private void Awake()
     {
         zoomCam = GameObject.Find("Player Camera").GetComponent<CameraZoomOutTest>();
+        stressManager = GameObject.Find("Volume Camera").GetComponent<StressManager>();
+        postPros = GameObject.Find("Volume Camera").GetComponent<VignetteScript>();
     }
 
     private void Start()
@@ -73,6 +77,8 @@ public class LightningManager : MonoBehaviour
             pos2 = new Vector2(temp.x, temp.y);
 
             cd = 0;
+            stressManager.LightningStrike();
+            postPros.LightningStrike();
             CreatePooledBolt(pos1,pos2, Color.white, 1f);
         }
          
