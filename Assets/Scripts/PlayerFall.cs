@@ -6,7 +6,7 @@ public class PlayerFall : MonoBehaviour
 {
     float fixedPosY = -7.06f;
     private bool isDead = false;
-    Vector2 origin;
+    public static Vector2 origin;
 
 
     // Start is called before the first frame update

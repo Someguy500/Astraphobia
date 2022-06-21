@@ -9,7 +9,6 @@ public class VignetteScript : MonoBehaviour
     private Vignette vignette = null; // check if vignette exists.
     public Volume volume = null;
     public Light2D GlobalLight2D = null;
-
     private void Awake()
     {
         if (volume.profile.TryGet(out Vignette vignette)) //Testing to see if vignette exists.
@@ -39,8 +38,14 @@ public class VignetteScript : MonoBehaviour
 
     IEnumerator Period()
     {
+
         yield return new WaitForSeconds(0.5f);
         GlobalLight2D.intensity = 0.5f;
+
+        if (StressManager.stressLvl >= 100)
+        {
+            GlobalLight2D.intensity = 0;
+        }
     }
 
     IEnumerator SecPeriod()
@@ -57,28 +62,30 @@ public class VignetteScript : MonoBehaviour
         StartCoroutine(Period());
         GlobalLight2D.intensity = 1f;
 
-        if (StressManager.stressLvl >= 20)
+        if (StressManager.stressLvl >= 20f)
         {
-            volume.weight = 0.6f;
+            volume.weight = 0.5f;
 
         }
-        if (StressManager.stressLvl >= 40)
+        if (StressManager.stressLvl >= 40f)
+        {
+            volume.weight = 0.6f;
+        }
+        else if (StressManager.stressLvl >= 60f)
         {
             volume.weight = 0.7f;
         }
-        else if (StressManager.stressLvl >= 60)
+        else if (StressManager.stressLvl >= 70)
         {
             volume.weight = 0.8f;
-        }
-        if (StressManager.stressLvl >= 80)
-        {
-            volume.weight = 0.9f;
             GlobalLight2D.intensity = 0.2f;
         }
-        if (StressManager.stressLvl >= 90)
+        else if (StressManager.stressLvl >= 80)
         {
+            volume.weight = 0.9f;
             GlobalLight2D.intensity = 0.1f;
         }
+
     }
 
     private void Update()

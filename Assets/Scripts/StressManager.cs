@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class StressManager : MonoBehaviour
 {
     public static float stressLvl;
-    public static bool isDead;
+    private bool isDead; 
     private bool stop;
 
     // Start is called before the first frame update
@@ -36,10 +36,13 @@ public class StressManager : MonoBehaviour
     {
         if (isDead == true)
         {
-            Time.timeScale = 0; //freezes 
+/*            Time.timeScale = 0; //freezes 
             SceneManager.LoadScene("MainMenuSample");
-            Time.timeScale = 1; //unfreeze
+            Time.timeScale = 1; //unfreeze*/
             Debug.Log("Dead");
+
+            gameObject.transform.position = PlayerFall.origin;
+
         }
     }
 
