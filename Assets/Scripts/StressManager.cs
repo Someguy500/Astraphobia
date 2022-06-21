@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class StressManager : MonoBehaviour
 {
     public static float stressLvl;
+    public float lightningCost = 2.5f;
     private bool isDead; 
     private bool stop;
 
@@ -20,8 +21,8 @@ public class StressManager : MonoBehaviour
     {
         if (stressLvl >= 0 && stressLvl <= 100 && isDead == false)
         {
-            stressLvl += 1f; //scalable stressLvl decrement
-            Debug.Log(stressLvl);
+            stressLvl += lightningCost; //scalable stressLvl decrement
+            //Debug.Log(stressLvl);
         }
         else 
         {
@@ -39,7 +40,7 @@ public class StressManager : MonoBehaviour
 /*            Time.timeScale = 0; //freezes 
             SceneManager.LoadScene("MainMenuSample");
             Time.timeScale = 1; //unfreeze*/
-            Debug.Log("Dead");
+           //Debug.Log("Dead");
 
             gameObject.transform.position = PlayerFall.origin;
 
@@ -50,7 +51,7 @@ public class StressManager : MonoBehaviour
     {
         stressBuild();
         yield return new WaitForSeconds(0.5f);
-        Debug.Log(stressLvl);
+        //Debug.Log(stressLvl);
     }
 
     public void LightningStrike()
