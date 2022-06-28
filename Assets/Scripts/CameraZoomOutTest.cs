@@ -24,7 +24,7 @@ public class CameraZoomOutTest : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetMouseButton(1) && canZoom)
+        if (Input.GetMouseButton(0) && canZoom)
         {
             if (cam.m_Lens.OrthographicSize < maxCamSize)
             {
