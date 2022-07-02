@@ -29,7 +29,7 @@ public class MovableScript : MonoBehaviour
                 box.GetComponent<FixedJoint2D>().enabled = true;
                 box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
                 Debug.Log(box);
-                Debug.Log("attached 1 ^");
+                Debug.Log("attached^");
                 onPush = false;
             }
         }
@@ -40,7 +40,7 @@ public class MovableScript : MonoBehaviour
 
                 box.GetComponent<FixedJoint2D>().enabled = false;
                 Debug.Log(box);
-                Debug.Log("attached 1 ^");
+                Debug.Log("detached^");
                 onPush = true;
             }
         }

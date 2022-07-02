@@ -2,27 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFall : MonoBehaviour
+public class ObjectRespawnScript : MonoBehaviour
 {
     float fixedPosY = -7.06f;
-    private bool isDead = false;
-    public static Vector2 origin;
+    private bool isOut = false;
+    private Vector2 objOrigin;
 
     void Start()
     {
-        origin = transform.position;
+        objOrigin = transform.position;
     }
 
-    public void fallDeath()
+    public void OutofBounds()
     {
         Respawn();
-        isDead = false;
+        isOut = false;
     }
 
 
     public void Respawn()
     {
-        gameObject.transform.position = origin;
+        gameObject.transform.position = objOrigin;
     }
 
 
@@ -31,8 +31,8 @@ public class PlayerFall : MonoBehaviour
     {
         if (gameObject.transform.position.y <= fixedPosY)
         {
-            isDead = true;
-            fallDeath();
+            isOut = true;
+            OutofBounds();
         }
     }
 }
