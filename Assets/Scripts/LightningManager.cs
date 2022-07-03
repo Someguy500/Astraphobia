@@ -77,9 +77,8 @@ public class LightningManager : MonoBehaviour
             pos2 = new Vector2(temp.x, temp.y);
 
             cd = 0;
-            stressManager.LightningStrike();
-            postPros.LightningStrike();
-            CreatePooledBolt(pos1,pos2, Color.white, 1f);
+            
+            CreateLightning();
         }
          
         for(int i = 0; i < activeBolts.Count; i++)
@@ -89,6 +88,13 @@ public class LightningManager : MonoBehaviour
         }
     }
 
+    void CreateLightning()
+    {
+        stressManager.LightningStrike();
+        postPros.LightningStrike();
+        CreatePooledBolt(pos1,pos2, Color.white, 1f);
+    }
+    
     void CreatePooledBolt(Vector2 source, Vector2 dest, Color color, float thickness)
     {
         if (inactiveBolts.Count > 0)
