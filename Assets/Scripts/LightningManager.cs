@@ -21,6 +21,7 @@ public class LightningManager : MonoBehaviour
 
     private Vector2 pos1, pos2;
     private float cd;
+    private static readonly int IsStruck = Animator.StringToHash("isStruck");
 
     private void Awake()
     {
@@ -57,7 +58,6 @@ public class LightningManager : MonoBehaviour
         cd += Time.deltaTime;
         pos1 = transform.GetChild(1).position;
         pos2 = new Vector2(temp.x, temp.y);
-        Debug.DrawRay(pos1,pos2 - pos1);
 
         int activeCount = activeBolts.Count;
 
@@ -78,8 +78,18 @@ public class LightningManager : MonoBehaviour
         if(Input.GetKey(KeyCode.Mouse0) && zoomCam.isFullZoom && cd >= lightningDelay)
         { 
             RaycastHit hit;
-            Ray ray = new Ray(pos1, pos2 -pos1);
-
+            Ray ray = new Ray(pos1, pos2 - pos1);
+            
+            Debug.DrawRay(pos1,pos2 - pos1);
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.CompareTag("LightningInteractables"))
+                {
+                    //hit.transform.SendMessage("LightningStruck", hit.collider.gameObject);
+                    Animator anim = hit.collider.gameObject.GetComponent<Animator>();
+                    anim.SetBool(IsStruck, true);
+                }
+            }
             cd = 0;
             
             CreateLightning();
