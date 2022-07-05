@@ -216,7 +216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20530941}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40, y: 0, z: 2}
+  m_LocalPosition: {x: -80, y: 0, z: 2}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -372,7 +372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.250015, y: -2.7257354, z: -10.152977}
+  m_LocalPosition: {x: -17.250015, y: -2.7257354, z: -10.652977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -884,7 +884,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831115947}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.250015, y: -2.7257354, z: -10.152977}
+  m_LocalPosition: {x: -17.250015, y: -2.7257354, z: -10.652977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6493,7 +6493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5518221348849966172, guid: 1e941d75d4799ca47be3f655b068c37f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5518221348849966172, guid: 1e941d75d4799ca47be3f655b068c37f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6612,6 +6612,14 @@ PrefabInstance:
     - target: {fileID: 8894842351615663859, guid: 166ea2a650ca1f54cbe2386b95fbe665, type: 3}
       propertyPath: m_Name
       value: Ladder
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894842351615663859, guid: 166ea2a650ca1f54cbe2386b95fbe665, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8894842351615663861, guid: 166ea2a650ca1f54cbe2386b95fbe665, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8894842351615663862, guid: 166ea2a650ca1f54cbe2386b95fbe665, type: 3}
       propertyPath: m_RootOrder
