@@ -10,7 +10,6 @@ public class StressManager : MonoBehaviour
     private bool isDead; 
     private bool stop;
 
-    // Start is called before the first frame update
     void Start()
     {
         stop = false;

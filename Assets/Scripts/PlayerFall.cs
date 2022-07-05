@@ -6,7 +6,7 @@ public class PlayerFall : MonoBehaviour
 {
     float fixedPosY = -7.06f;
     private bool isDead = false;
-    public static Vector2 origin;
+    public static Vector3 origin;
     public Rigidbody2D rb;
     [SerializeField] private LayerMask CPLayerMask;
 
@@ -28,8 +28,6 @@ public class PlayerFall : MonoBehaviour
         gameObject.transform.position = origin;
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         if (gameObject.transform.position.y <= fixedPosY)

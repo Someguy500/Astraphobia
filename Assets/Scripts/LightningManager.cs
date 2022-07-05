@@ -21,6 +21,7 @@ public class LightningManager : MonoBehaviour
 
     private Vector2 pos1, pos2;
     private float cd;
+    private static readonly int IsStruck = Animator.StringToHash("isStruck");
 
     private void Awake()
     {
@@ -51,9 +52,12 @@ public class LightningManager : MonoBehaviour
     {
         GameObject boltObj;
         LightningBolt bolt;
-
+        
+        Vector3 temp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
         cd += Time.deltaTime;
         pos1 = transform.GetChild(1).position;
+        pos2 = new Vector2(temp.x, temp.y);
 
         int activeCount = activeBolts.Count;
 
@@ -70,14 +74,20 @@ public class LightningManager : MonoBehaviour
                 inactiveBolts.Add(boltObj);
             }
         }
-        
+
         if(Input.GetKey(KeyCode.Mouse0) && zoomCam.isFullZoom && cd >= lightningDelay)
         { 
-            Vector3 temp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            pos2 = new Vector2(temp.x, temp.y);
-
-            cd = 0;
+            RaycastHit2D hit = Physics2D.Raycast(pos1,pos2 - pos1, Vector2.Distance(pos1,pos2));
             
+            Debug.DrawRay(pos1,pos2 - pos1, Color.cyan,5f);
+            if (hit)
+            { 
+                if (hit.collider.CompareTag("LightningInteractables"))
+                {
+                    StartCoroutine(PlayAnimation(hit.collider.gameObject));
+                }
+            }
+            cd = 0;
             CreateLightning();
         }
          
@@ -109,5 +119,17 @@ public class LightningManager : MonoBehaviour
             LightningBolt boltComponent = boltObj.GetComponent<LightningBolt>();
             boltComponent.ActivateBolt(source, dest, color, thickness);
         }
+    }
+
+    IEnumerator PlayAnimation(GameObject gameObject)
+    {
+        Animator anim = gameObject.GetComponent<Animator>();
+        if (anim.GetBool(IsStruck) == false)
+        {
+            anim.SetBool(IsStruck, true);
+            yield return new WaitForSeconds(1f);
+            gameObject.GetComponent<PolygonCollider2D>().TryUpdateShapeToAttachedSprite();
+        }
+        yield return null;
     }
 }

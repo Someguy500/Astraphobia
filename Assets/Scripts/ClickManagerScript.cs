@@ -6,13 +6,6 @@ public class ClickManagerScript : MonoBehaviour
 {
     private float mouseX, mouseY;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         mouseX = Input.mousePosition.x;

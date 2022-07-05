@@ -168,6 +168,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a494009dabc3c2946881ac93a204c81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 5518221348849966170}
+  CPLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &2120148668729701151
 MonoBehaviour:
   m_ObjectHideFlags: 0

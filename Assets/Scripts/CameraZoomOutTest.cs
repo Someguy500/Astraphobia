@@ -27,32 +27,16 @@ public class CameraZoomOutTest : MonoBehaviour
         if (Input.GetMouseButton(0) && canZoom)
         {
             if (cam.m_Lens.OrthographicSize < maxCamSize)
-            {
                 cam.m_Lens.OrthographicSize += (zoomRate*0.02f);
-            }
+
         }
-        else 
+        else
         {
             if (cam.m_Lens.OrthographicSize > minCamSize)
-            {
-                cam.m_Lens.OrthographicSize -= (zoomRate*0.05f);  
-            }
+                cam.m_Lens.OrthographicSize -= (zoomRate*0.05f);
 
-            if (Input.GetAxisRaw("Horizontal") == 0)
-            {
-                canZoom = true;
-            }
-            else
-            {
-                canZoom = false;
-            }
+            canZoom = Input.GetAxisRaw("Horizontal") == 0;
         }
-
-        if (cam.m_Lens.OrthographicSize >= maxCamSize)
-            isFullZoom = true;
-        else isFullZoom = false;
-
-
-
+        isFullZoom = cam.m_Lens.OrthographicSize >= maxCamSize;
     }
 }
