@@ -80,20 +80,11 @@ public class LightningManager : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(pos1,pos2 - pos1);
             
             Debug.DrawRay(pos1,pos2 - pos1, Color.cyan,5f);
-            if (hit)
+            if (hit.collider.CompareTag("LightningInteractables"))
             {
-                Debug.Log("hit1");
-
-                if (hit.collider.CompareTag("LightningInteractables"))
-                {
-                    Debug.Log("hit2");
-                    //hit.transform.SendMessage("LightningStruck", hit.collider.gameObject);
-                    Animator anim = hit.collider.gameObject.GetComponent<Animator>();
-                    anim.SetBool(IsStruck, true);
-                }
+                StartCoroutine(PlayAnimation(hit.collider.gameObject));
             }
             cd = 0;
-            
             CreateLightning();
         }
          
@@ -125,5 +116,17 @@ public class LightningManager : MonoBehaviour
             LightningBolt boltComponent = boltObj.GetComponent<LightningBolt>();
             boltComponent.ActivateBolt(source, dest, color, thickness);
         }
+    }
+
+    IEnumerator PlayAnimation(GameObject gameObject)
+    {
+        Animator anim = gameObject.GetComponent<Animator>();
+        if (anim.GetBool(IsStruck) == false)
+        {
+            anim.SetBool(IsStruck, true);
+            yield return new WaitForSeconds(1f);
+            gameObject.GetComponent<PolygonCollider2D>().TryUpdateShapeToAttachedSprite();
+        }
+        yield return null;
     }
 }
