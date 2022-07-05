@@ -6102,11 +6102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &1500922489 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 5518221348849966170, guid: 1e941d75d4799ca47be3f655b068c37f, type: 3}
-  m_PrefabInstance: {fileID: 2120148670040824520}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1752464435
 GameObject:
   m_ObjectHideFlags: 0
@@ -6471,14 +6466,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5518221348849966168, guid: 1e941d75d4799ca47be3f655b068c37f, type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 1500922489}
-    - target: {fileID: 5518221348849966168, guid: 1e941d75d4799ca47be3f655b068c37f, type: 3}
-      propertyPath: CPLayerMask.m_Bits
-      value: 256
-      objectReference: {fileID: 0}
     - target: {fileID: 5518221348849966172, guid: 1e941d75d4799ca47be3f655b068c37f, type: 3}
       propertyPath: m_RootOrder
       value: 2
