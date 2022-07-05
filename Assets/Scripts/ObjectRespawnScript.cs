@@ -25,8 +25,6 @@ public class ObjectRespawnScript : MonoBehaviour
         gameObject.transform.position = objOrigin;
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         if (gameObject.transform.position.y <= fixedPosY)
