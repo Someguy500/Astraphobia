@@ -77,14 +77,16 @@ public class LightningManager : MonoBehaviour
 
         if(Input.GetKey(KeyCode.Mouse0) && zoomCam.isFullZoom && cd >= lightningDelay)
         { 
-            RaycastHit hit;
-            Ray ray = new Ray(pos1, pos2 - pos1);
+            RaycastHit2D hit = Physics2D.Raycast(pos1,pos2 - pos1);
             
-            Debug.DrawRay(pos1,pos2 - pos1);
-            if (Physics.Raycast(ray, out hit))
+            Debug.DrawRay(pos1,pos2 - pos1, Color.cyan,5f);
+            if (hit)
             {
+                Debug.Log("hit1");
+
                 if (hit.collider.CompareTag("LightningInteractables"))
                 {
+                    Debug.Log("hit2");
                     //hit.transform.SendMessage("LightningStruck", hit.collider.gameObject);
                     Animator anim = hit.collider.gameObject.GetComponent<Animator>();
                     anim.SetBool(IsStruck, true);
