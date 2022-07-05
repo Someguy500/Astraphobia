@@ -51,9 +51,13 @@ public class LightningManager : MonoBehaviour
     {
         GameObject boltObj;
         LightningBolt bolt;
-
+        
+        Vector3 temp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
         cd += Time.deltaTime;
         pos1 = transform.GetChild(1).position;
+        pos2 = new Vector2(temp.x, temp.y);
+        Debug.DrawRay(pos1,pos2 - pos1);
 
         int activeCount = activeBolts.Count;
 
@@ -70,11 +74,11 @@ public class LightningManager : MonoBehaviour
                 inactiveBolts.Add(boltObj);
             }
         }
-        
+
         if(Input.GetKey(KeyCode.Mouse0) && zoomCam.isFullZoom && cd >= lightningDelay)
         { 
-            Vector3 temp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            pos2 = new Vector2(temp.x, temp.y);
+            RaycastHit hit;
+            Ray ray = new Ray(pos1, pos2 -pos1);
 
             cd = 0;
             
