@@ -60,6 +60,8 @@ public class PlayerBehaviour : MonoBehaviour
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 //(just in case you wanted to set jump speed instead of adding)
                 //rigidbody.velocity.y = jumpForce;
+
+                //if vel = 0, swap to idle
             }
 
             if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetMouseButton(0) == true)
