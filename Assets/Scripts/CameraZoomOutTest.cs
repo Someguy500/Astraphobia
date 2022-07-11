@@ -16,6 +16,8 @@ public class CameraZoomOutTest : MonoBehaviour
     public float zoomRate = 1.0f;
 
     private bool canZoom = true;
+
+    private Vector3 top;
     
     void Awake()
     {
