@@ -325,7 +325,7 @@ MonoBehaviour:
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
-      displayed: 0
+      displayed: 1
       snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -441,9 +441,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.4112043, y: 1.0143782, z: 76.97505}
+    m_Target: {x: -26.654911, y: -9.706711, z: 177.85529}
     speed: 2
-    m_Value: {x: -2.4112043, y: 1.0143782, z: 76.97505}
+    m_Value: {x: -26.654911, y: -9.706711, z: 177.85529}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -490,13 +490,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.024301568, y: 0.020089118, z: -0.00049239147, w: -0.99950325}
+    m_Target: {x: 0.052226026, y: -0.14478903, z: 0.007656444, w: 0.9880557}
     speed: 2
-    m_Value: {x: -0.024301557, y: 0.020089108, z: -0.00049239123, w: -0.9995028}
+    m_Value: {x: 0.05222592, y: -0.14478873, z: 0.0076564285, w: 0.9880537}
   m_Size:
-    m_Target: 0.059320588
+    m_Target: 54.683292
     speed: 2
-    m_Value: 0.059320588
+    m_Value: 54.683292
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -606,7 +606,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 77114
+  controlID: 77415
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -665,23 +665,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: b494fdffd6a4fdff6615feff041ffeffa852ffff7e53ffff208bffffdc8bffff768cffff7a8dffff3a8fffffe88fffff8290ffff5894ffffa295ffff0e97ffff7698ffffe899ffff909affff3a9bffffe29bffff9a9cffffa29dffff4a9effff209fffffc89fffff72a0ffff1ca1ffff50e2ffff42eaffff36ebffff0cfaffff42960000dc970000e6970000
+      m_SelectedIDs: 34e70000
+      m_LastClickedID: 59188
+      m_ExpandedIDs: 5268fcff9669fcffbeb5fcff76b6fcff3cb7fcffe6b7fcff8eb8fcff3ab9fcffb494fdffd6a4fdff6615feff041ffeffa852ffff7e53ffff208bffffdc8bffff768cffff7a8dffff3a8fffffe88fffff8290ffff5894ffffa295ffff0e97ffff7698ffffe899ffff909affff3a9bffffe29bffff9a9cffffa29dffff4a9effff209fffffc89fffff72a0ffff1ca1ffff50e2ffff42eaffff36ebffff0cfaffff42960000dc970000e6970000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Platforms
+        m_OriginalName: Platforms
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 58268
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -787,21 +787,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Materials
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Materials
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity (IL)\Unity (Projects)\Astraphobia
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 3e710000
-    m_LastClickedID: 28990
+    m_SelectedIDs: ba6f0000
+    m_LastClickedID: 28602
     m_ExpandedIDs: 00000000b86f0000ba6f0000bc6f000040710000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -855,9 +855,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 34e70000
+    m_LastClickedInstanceID: 59188
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -874,7 +874,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 13}
+      m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -916,7 +916,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -46376
+  m_LastSelectedObjectID: 58230
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
