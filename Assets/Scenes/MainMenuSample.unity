@@ -1604,6 +1604,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1235339130}
   - component: {fileID: 1235339131}
+  - component: {fileID: 1235339132}
   m_Layer: 5
   m_Name: MasterSlider
   m_TagString: Untagged
@@ -1685,6 +1686,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1235339132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235339129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32648bf0966e2df449e1b1a5931eb8de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MSlider: {fileID: 1235339131}
 --- !u!1 &1253888761
 GameObject:
   m_ObjectHideFlags: 0
