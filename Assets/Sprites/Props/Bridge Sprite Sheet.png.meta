@@ -1,0 +1,697 @@
+fileFormatVersion: 2
+guid: 4f0c07ee73f8c02408288ae3a4c6c057
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bridge Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7320
+        width: 1200
+        height: 610
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -508, y: -74}
+        - {x: -500, y: -116}
+        - {x: -392, y: -147}
+        - {x: -275, y: -162}
+        - {x: -276, y: -111}
+        - {x: -387, y: -92}
+      - - {x: -62, y: -187}
+        - {x: -126, y: -168}
+        - {x: -122, y: -134}
+        - {x: 12, y: -139}
+        - {x: 14, y: -181}
+      - - {x: 368, y: -147}
+        - {x: 323, y: -151}
+        - {x: 308, y: -162}
+        - {x: 222, y: -173}
+        - {x: 194, y: -166}
+        - {x: 190, y: -140}
+        - {x: 319, y: -122}
+        - {x: 453, y: -99}
+        - {x: 454, y: -143}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17ac479ef246c45469157aeb68eac364
+      internalID: 741685194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6710
+        width: 1200
+        height: 610
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -508, y: -74}
+        - {x: -500, y: -116}
+        - {x: -392, y: -147}
+        - {x: -275, y: -162}
+        - {x: -276, y: -111}
+        - {x: -387, y: -92}
+      - - {x: -62, y: -187}
+        - {x: -126, y: -168}
+        - {x: -122, y: -134}
+        - {x: 12, y: -139}
+        - {x: 14, y: -181}
+      - - {x: 368, y: -147}
+        - {x: 323, y: -151}
+        - {x: 308, y: -162}
+        - {x: 222, y: -173}
+        - {x: 194, y: -166}
+        - {x: 190, y: -140}
+        - {x: 319, y: -122}
+        - {x: 453, y: -99}
+        - {x: 454, y: -143}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd98b2309c3c6a459bf81f99ae334b1
+      internalID: 177694168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6100
+        width: 1200
+        height: 610
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -508, y: -74}
+        - {x: -500, y: -116}
+        - {x: -392, y: -147}
+        - {x: -275, y: -162}
+        - {x: -276, y: -111}
+        - {x: -387, y: -92}
+      - - {x: -62, y: -187}
+        - {x: -126, y: -168}
+        - {x: -122, y: -134}
+        - {x: 12, y: -139}
+        - {x: 14, y: -181}
+      - - {x: 368, y: -147}
+        - {x: 323, y: -151}
+        - {x: 308, y: -162}
+        - {x: 222, y: -173}
+        - {x: 194, y: -166}
+        - {x: 190, y: -140}
+        - {x: 319, y: -122}
+        - {x: 453, y: -99}
+        - {x: 454, y: -143}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3103d33c14d834b9d82095dfd21155
+      internalID: 1410033802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5490
+        width: 1200
+        height: 610
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -508, y: -74}
+        - {x: -500, y: -116}
+        - {x: -392, y: -147}
+        - {x: -275, y: -162}
+        - {x: -276, y: -111}
+        - {x: -387, y: -92}
+      - - {x: -62, y: -187}
+        - {x: -126, y: -168}
+        - {x: -122, y: -134}
+        - {x: 12, y: -139}
+        - {x: 14, y: -181}
+      - - {x: 368, y: -147}
+        - {x: 323, y: -151}
+        - {x: 308, y: -162}
+        - {x: 222, y: -173}
+        - {x: 194, y: -166}
+        - {x: 190, y: -140}
+        - {x: 319, y: -122}
+        - {x: 453, y: -99}
+        - {x: 454, y: -143}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b9998cc73fad0c44b0dc51184ae93e8
+      internalID: -2064382075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4880
+        width: 1200
+        height: 610
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -508, y: -74}
+        - {x: -500, y: -116}
+        - {x: -392, y: -147}
+        - {x: -275, y: -162}
+        - {x: -276, y: -111}
+        - {x: -387, y: -92}
+      - - {x: -62, y: -187}
+        - {x: -126, y: -168}
+        - {x: -122, y: -134}
+        - {x: 12, y: -139}
+        - {x: 14, y: -181}
+      - - {x: 368, y: -147}
+        - {x: 323, y: -151}
+        - {x: 304, y: -163}
+        - {x: 223, y: -178}
+        - {x: 193, y: -168}
+        - {x: 187, y: -135}
+        - {x: 315, y: -124}
+        - {x: 366, y: -101}
+        - {x: 456, y: -99}
+        - {x: 454, y: -143}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6721c31dd4e06c4aa16687a258c37dc
+      internalID: -1919029111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4270
+        width: 1200
+        height: 610
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -508, y: -80}
+        - {x: -500, y: -116}
+        - {x: -397, y: -153}
+        - {x: -381, y: -144}
+        - {x: -283, y: -173}
+        - {x: -267, y: -126}
+        - {x: -392, y: -103}
+      - - {x: -58, y: -198}
+        - {x: -118, y: -184}
+        - {x: -121, y: -145}
+        - {x: 15, y: -145}
+        - {x: 4, y: -194}
+      - - {x: 372, y: -169}
+        - {x: 327, y: -180}
+        - {x: 305, y: -191}
+        - {x: 210, y: -204}
+        - {x: 188, y: -187}
+        - {x: 194, y: -157}
+        - {x: 313, y: -145}
+        - {x: 363, y: -129}
+        - {x: 456, y: -132}
+        - {x: 453, y: -170}
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc82c837a0330ce43a1b74b211a2ca0c
+      internalID: 154110789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3660
+        width: 1200
+        height: 610
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -508, y: -83}
+        - {x: -500, y: -116}
+        - {x: -400, y: -150}
+        - {x: -278, y: -167}
+        - {x: -273, y: -116}
+        - {x: -391, y: -103}
+      - - {x: -63, y: -207}
+        - {x: -123, y: -193}
+        - {x: -122, y: -159}
+        - {x: 11, y: -158}
+        - {x: 6, y: -207}
+      - - {x: 370, y: -167}
+        - {x: 327, y: -171}
+        - {x: 307, y: -180}
+        - {x: 224, y: -192}
+        - {x: 202, y: -189}
+        - {x: 190, y: -159}
+        - {x: 261, y: -142}
+        - {x: 321, y: -142}
+        - {x: 348.16003, y: -121.78418}
+        - {x: 454, y: -121}
+        - {x: 452, y: -162}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d27271b853c49b14da265e124f4e9de9
+      internalID: -1963806055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3050
+        width: 1200
+        height: 610
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -378, y: -121}
+        - {x: -494, y: -99}
+        - {x: -466, y: -149}
+        - {x: -389, y: -172}
+        - {x: -376, y: -160}
+        - {x: -265, y: -197}
+        - {x: -263, y: -147}
+        - {x: -366, y: -136}
+      - - {x: -60, y: -240}
+        - {x: -113, y: -228}
+        - {x: -112, y: -192}
+        - {x: 16, y: -194}
+        - {x: 6, y: -245}
+      - - {x: 350, y: -201}
+        - {x: 274, y: -224}
+        - {x: 192, y: -233}
+        - {x: 179, y: -193}
+        - {x: 310, y: -179}
+        - {x: 345, y: -161}
+        - {x: 436, y: -157}
+        - {x: 442, y: -203}
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcb4c7112b96bf448bf0404b1166b986
+      internalID: 705481194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2440
+        width: 1200
+        height: 610
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -380, y: -131}
+        - {x: -496, y: -121}
+        - {x: -472, y: -155}
+        - {x: -391, y: -183}
+        - {x: -373, y: -179}
+        - {x: -368, y: -193}
+        - {x: -260, y: -220}
+        - {x: -260, y: -169}
+        - {x: -369, y: -158}
+      - - {x: -61, y: -246}
+        - {x: -111, y: -230}
+        - {x: -113, y: -201}
+        - {x: 18, y: -199}
+        - {x: 6, y: -245}
+      - - {x: 350, y: -219}
+        - {x: 274, y: -242}
+        - {x: 192, y: -251}
+        - {x: 179, y: -211}
+        - {x: 310, y: -197}
+        - {x: 345, y: -179}
+        - {x: 436, y: -175}
+        - {x: 442, y: -221}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29e8e19c8ca475e4c8b3ee104fd13f81
+      internalID: -1685930550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1830
+        width: 1200
+        height: 610
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -490, y: -105}
+        - {x: -473, y: -147}
+        - {x: -379, y: -173}
+        - {x: -257, y: -193}
+        - {x: -259, y: -151}
+        - {x: -371, y: -136}
+        - {x: -375, y: -121}
+      - - {x: -56, y: -245}
+        - {x: -110, y: -229}
+        - {x: -116, y: -192}
+        - {x: 18, y: -197}
+        - {x: 5, y: -244}
+      - - {x: 356, y: -200}
+        - {x: 311, y: -204}
+        - {x: 296, y: -215}
+        - {x: 210, y: -226}
+        - {x: 182, y: -219}
+        - {x: 178, y: -193}
+        - {x: 307, y: -175}
+        - {x: 441, y: -152}
+        - {x: 442, y: -196}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67365da04c0c6c4ea21f4c87dc6f8f2
+      internalID: -381247938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1220
+        width: 1200
+        height: 610
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -504, y: -88}
+        - {x: -500, y: -116}
+        - {x: -392, y: -147}
+        - {x: -275, y: -162}
+        - {x: -275, y: -120}
+        - {x: -383, y: -109}
+        - {x: -397, y: -97}
+      - - {x: -63, y: -209}
+        - {x: -127, y: -190}
+        - {x: -123, y: -156}
+        - {x: 11, y: -161}
+        - {x: 13, y: -203}
+      - - {x: 366, y: -164}
+        - {x: 321, y: -168}
+        - {x: 306, y: -179}
+        - {x: 220, y: -190}
+        - {x: 192, y: -183}
+        - {x: 188, y: -157}
+        - {x: 317, y: -141}
+        - {x: 338, y: -130}
+        - {x: 451, y: -116}
+        - {x: 452, y: -160}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6605f92ef71a2bb40894d9360b3bd02a
+      internalID: 1393562185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 610
+        width: 1200
+        height: 610
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -507, y: -81}
+        - {x: -499, y: -123}
+        - {x: -391, y: -154}
+        - {x: -274, y: -169}
+        - {x: -275, y: -118}
+        - {x: -383, y: -110}
+        - {x: -398, y: -100}
+      - - {x: -60, y: -197}
+        - {x: -116, y: -181}
+        - {x: -120, y: -144}
+        - {x: 14, y: -149}
+        - {x: 8, y: -191}
+      - - {x: 368, y: -172}
+        - {x: 323, y: -176}
+        - {x: 308, y: -187}
+        - {x: 222, y: -198}
+        - {x: 194, y: -191}
+        - {x: 190, y: -165}
+        - {x: 315, y: -149}
+        - {x: 337, y: -133}
+        - {x: 453, y: -124}
+        - {x: 454, y: -168}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d63f11cb02197148a6a852b35a93f18
+      internalID: 1519092385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bridge Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1200
+        height: 610
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -508, y: -74}
+        - {x: -500, y: -116}
+        - {x: -400, y: -146}
+        - {x: -391, y: -129}
+        - {x: -275, y: -162}
+        - {x: -272, y: -112}
+        - {x: -327, y: -100}
+        - {x: -388, y: -103}
+        - {x: -399, y: -90}
+      - - {x: -62, y: -187}
+        - {x: -126, y: -168}
+        - {x: -122, y: -134}
+        - {x: 12, y: -139}
+        - {x: 14, y: -181}
+      - - {x: 368, y: -147}
+        - {x: 323, y: -151}
+        - {x: 308, y: -162}
+        - {x: 222, y: -173}
+        - {x: 194, y: -166}
+        - {x: 186, y: -138}
+        - {x: 309, y: -123}
+        - {x: 352, y: -106}
+        - {x: 453, y: -99}
+        - {x: 454, y: -143}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 205012ef3d0a2894880be9a83dff1966
+      internalID: -328703414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Bridge Sprite Sheet_12: -328703414
+      Bridge Sprite Sheet_3: -2064382075
+      Bridge Sprite Sheet_5: 154110789
+      Bridge Sprite Sheet_8: -1685930550
+      Bridge Sprite Sheet_0: 741685194
+      Bridge Sprite Sheet_4: -1919029111
+      Bridge Sprite Sheet_1: 177694168
+      Bridge Sprite Sheet_6: -1963806055
+      Bridge Sprite Sheet_11: 1519092385
+      Bridge Sprite Sheet_2: 1410033802
+      Bridge Sprite Sheet_10: 1393562185
+      Bridge Sprite Sheet_7: 705481194
+      Bridge Sprite Sheet_9: -381247938
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
