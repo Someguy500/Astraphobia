@@ -36,10 +36,10 @@ public class StressManager : MonoBehaviour
     {
         if (isDead == true)
         {
-/*            Time.timeScale = 0; //freezes 
-            SceneManager.LoadScene("MainMenuSample");
-            Time.timeScale = 1; //unfreeze*/
-           //Debug.Log("Dead");
+            Time.timeScale = 0; //freezes 
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            /*Time.timeScale = 1; //unfreeze*/
+                      
 
             gameObject.transform.position = PlayerFall.origin;
 
