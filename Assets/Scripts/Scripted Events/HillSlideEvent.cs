@@ -10,20 +10,24 @@ public class HillSlideEvent : MonoBehaviour
     
     private GameObject player;
     private PlayerBehaviour pb;
+    private Rigidbody2D prb;
 
-    public Collider2D startTrigger;
-    public Collider2D jumpTrigger;
+    public Transform slidepoint;
+    public Transform landpoint;
+
+    private Coroutine co;
     
     private void Start()
     {
         player = GameObject.Find("Player");
         pb = player.GetComponent<PlayerBehaviour>();
+        prb = player.GetComponent<Rigidbody2D>();
     }
 
     public void StartEvent()
     {
         pb.enabled = false;
-        StartCoroutine(Slide(player.transform.position, jumpTrigger.transform.position));
+        co = StartCoroutine(Lerp(player.transform.position, slidepoint.transform.position, slideDuration));
     }
 
     public void AllowJump()
@@ -35,23 +39,36 @@ public class HillSlideEvent : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && (allowJump))
         {
-            StopAllCoroutines();
-            player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * player.GetComponent<PlayerBehaviour>().jumpForce, ForceMode2D.Impulse);
-            player.GetComponent<Animator>().SetBool("Jump", true);
             allowJump = false;
-            pb.enabled = true;
+            StopAllCoroutines();
+            prb.isKinematic = true;
+            StartCoroutine(LerpJump(player.transform.position, landpoint.transform.position, 1));
+            player.GetComponent<Animator>().SetBool("Jump", true);
+            
         }
     }
 
-    IEnumerator Slide(Vector3 start, Vector3 end)
+    IEnumerator Lerp(Vector3 start, Vector3 end, float t)
     {
         float time = 0;
-        while (time < slideDuration)
+        while (time < t)
         {
-            player.transform.position = Vector3.Lerp(start, end, time / slideDuration);
+            player.transform.position = Vector3.Lerp(start, end, time / t);
             time += Time.deltaTime;
             yield return null;
         }
-        player.transform.position = end;
+    }
+    
+    IEnumerator LerpJump(Vector3 start, Vector3 end, float t)
+    {
+        float time = 0;
+        while (time < t)
+        {
+            player.transform.position = new Vector3(Mathf.Lerp(start.x, end.x, time / t), end.y + pb.jumpForce / 2 * Mathf.Sin(time / t * Mathf.PI), player.transform.position.z);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        pb.enabled = true;
+        prb.isKinematic = false;
     }
 }
