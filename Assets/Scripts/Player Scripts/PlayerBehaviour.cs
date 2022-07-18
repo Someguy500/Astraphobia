@@ -68,10 +68,7 @@ public class PlayerBehaviour : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && (isGrounded == true))
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                //(just in case you wanted to set jump speed instead of adding)
-                //rigidbody.velocity.y = jumpForce;
-
-                //if vel = 0, swap to idle
+                anim.SetBool("Jump", true);
             }
 
             if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetMouseButton(0) == true)
