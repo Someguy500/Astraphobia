@@ -32,12 +32,6 @@ public class BoulderMove : MonoBehaviour
             }
             
         }
-        else if(gameObject.transform.position.x <= -32f)
-        {
-            gameObject.transform.position = oriPos;
-            roll = 0;
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
