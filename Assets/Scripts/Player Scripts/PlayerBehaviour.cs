@@ -17,6 +17,7 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] private float sizeScale = 0.25f;
 
     private Animator anim;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -76,5 +77,6 @@ public class PlayerBehaviour : MonoBehaviour
         }
         else if (Input.GetMouseButton(0) == false)
             isZooming = false;
+
     }
 }

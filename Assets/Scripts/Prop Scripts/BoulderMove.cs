@@ -7,14 +7,20 @@ public class BoulderMove : MonoBehaviour
 	public Rigidbody2D rb;
 	public int roll;
     public GameObject Player;
+    public Vector3 oriPos;
+    public static bool resetPos;
+    public bool isLock = false;
 
 	void Start()
 	{
-		rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        oriPos = gameObject.transform.position;
+        resetPos = false;
+
         roll = 0;
 	}
 
-    private void Update()
+    public void unlocked()
     {
         if (Player.transform.position.x >= 30f)
         {
@@ -24,6 +30,29 @@ public class BoulderMove : MonoBehaviour
                 roll++;
                 rb.AddForce(new Vector2(-1, 0) * 2);
             }
+            
         }
+        else if(gameObject.transform.position.x <= -32f)
+        {
+            gameObject.transform.position = oriPos;
+            roll = 0;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            resetPos = true;
+            gameObject.transform.position = oriPos;
+            roll = 0;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+    }
+
+    private void Update()
+    {
+        unlocked();
     }
 }
