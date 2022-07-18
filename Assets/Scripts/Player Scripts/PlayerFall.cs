@@ -42,5 +42,13 @@ public class PlayerFall : MonoBehaviour
         {
             origin = transform.position;
         }
+
+        if (BoulderMove.resetPos)
+        {
+            BoulderMove.resetPos = false;
+            gameObject.transform.position = origin;
+        }
+
+
     }
 }
