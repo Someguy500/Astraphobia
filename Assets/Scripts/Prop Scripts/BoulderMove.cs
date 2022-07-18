@@ -24,7 +24,6 @@ public class BoulderMove : MonoBehaviour
                 roll++;
                 rb.AddForce(new Vector2(-1, 0) * 2);
             }
-
         }
     }
 }
