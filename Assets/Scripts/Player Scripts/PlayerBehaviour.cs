@@ -72,7 +72,6 @@ public class PlayerBehaviour : MonoBehaviour
                 //rigidbody.velocity.y = jumpForce;
 
                 //if vel = 0, swap to idle
-                SoundManager.PlaySound();
             }
 
             if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetMouseButton(0) == true)
