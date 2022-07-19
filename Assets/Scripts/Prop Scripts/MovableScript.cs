@@ -30,13 +30,13 @@ public class MovableScript : MonoBehaviour
             {
                 anim.SetInteger("anim", 1);
                 anim.SetBool("Push", true);
-                anim.SetBool("Pull", false);
+                //anim.SetBool("Pull", false);
             }
             else if (Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A)))
             {
                 anim.SetInteger("anim", 2);
                 anim.SetBool("Pull", true);
-                anim.SetBool("Push", false);
+                //anim.SetBool("Push", false);
             }
         }
 

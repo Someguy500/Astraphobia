@@ -27,7 +27,7 @@ public class HillSlideEvent : MonoBehaviour
     public void StartEvent()
     {
         playerPB.enabled = false;
-        playerAnim.SetBool("Slide",true);
+        PlayerAnimationManager.Instance.ChangeAnim("Slide");
         StartCoroutine(Lerp(player.transform.position, slidepoint.transform.position, slideDuration));
     }
 
@@ -50,7 +50,8 @@ public class HillSlideEvent : MonoBehaviour
             StopAllCoroutines();
             playerRB.isKinematic = true;
             StartCoroutine(LerpJump(player.transform.position, landpoint.transform.position, 1));
-            playerAnim.SetBool("Jump", true);
+            PlayerAnimationManager.Instance.ChangeAnim("Jump");
+            playerPB.enabled = true;
         }
     }
 
@@ -74,7 +75,6 @@ public class HillSlideEvent : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-        playerPB.enabled = true;
         playerRB.isKinematic = false;
     }
 }

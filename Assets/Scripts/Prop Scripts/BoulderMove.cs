@@ -48,13 +48,12 @@ public class BoulderMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player" && roll == 0)
         {
             resetPos = true;
             gameObject.transform.position = oriPos;
             roll = 0;
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
-       
         }
     }
 

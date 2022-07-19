@@ -59,24 +59,21 @@ public class PlayerBehaviour : MonoBehaviour
             if (xMove != 0 && MovableScript.changeAnim == false)
             {
                 anim.SetInteger("anim", 0);
-                anim.SetBool("Idle", false);
-                anim.SetBool("Walk", true);
+                PlayerAnimationManager.Instance.ChangeAnim("Walk");
             }       
             else
             {
                 if(MovableScript.changeAnim == false)
                 {
                     anim.SetInteger("anim", 0);
-                    anim.SetBool("Idle", true);
-                    anim.SetBool("Walk", false);
+                    PlayerAnimationManager.Instance.ChangeAnim("Idle");
                 }
-
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && (isGrounded == true))
             {
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                anim.SetBool("Jump", true);
+                PlayerAnimationManager.Instance.ChangeAnim("Jump");
             }
 
             if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetMouseButton(0) == true)
