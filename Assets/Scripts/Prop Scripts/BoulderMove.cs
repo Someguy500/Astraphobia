@@ -32,11 +32,16 @@ public class BoulderMove : MonoBehaviour
             }
             
         }
+
+        if (gameObject.transform.position.x <= -29f)
+        {
+            roll = 1;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player" && !(gameObject.transform.position.x >= -29f))
         {
             resetPos = true;
             gameObject.transform.position = oriPos;
