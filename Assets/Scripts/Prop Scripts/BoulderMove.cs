@@ -48,7 +48,7 @@ public class BoulderMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player" && roll == 0)
+        if(collision.gameObject.tag == "Player")
         {
             resetPos = true;
             gameObject.transform.position = oriPos;
