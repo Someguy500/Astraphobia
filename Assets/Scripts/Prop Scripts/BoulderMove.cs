@@ -24,6 +24,8 @@ public class BoulderMove : MonoBehaviour
     {
         if (Player.transform.position.x >= 30f)
         {
+            rb.simulated = false;
+            rb.simulated = true;
             rb.constraints = RigidbodyConstraints2D.None;
             if (roll == 0)
             {
