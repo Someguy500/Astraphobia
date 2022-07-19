@@ -29,9 +29,21 @@ public class BoulderMove : MonoBehaviour
             {
                 roll++;
                 rb.AddForce(new Vector2(-1, 0) * 2);
+                StartCoroutine(bDelay());
             }
-            
+          
         }
+
+        if (gameObject.transform.position.x <= -29f)
+        {
+            roll = 1;
+        }
+    }
+
+    IEnumerator bDelay()
+    {       
+        yield return new WaitForSeconds(3.1f);
+        transform.localScale = new Vector3(0.1947076f, 0.1947076f, 0.1947076f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -42,6 +54,7 @@ public class BoulderMove : MonoBehaviour
             gameObject.transform.position = oriPos;
             roll = 0;
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
+       
         }
     }
 

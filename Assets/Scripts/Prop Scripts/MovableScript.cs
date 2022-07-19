@@ -26,6 +26,15 @@ public class MovableScript : MonoBehaviour
 
             if (hit.collider != null && Input.GetKeyDown(KeyCode.V))
             {
+/*                if (gameObject.transform.position.x == 0.25)
+                {
+
+                }
+                else if (gameObject.transform.position.x == -0.25)
+                {
+
+                }*/
+
                 box = hit.collider.gameObject;
                 box.GetComponent<FixedJoint2D>().enabled = true;
                 box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
