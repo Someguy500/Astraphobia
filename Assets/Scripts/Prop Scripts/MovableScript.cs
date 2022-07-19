@@ -28,22 +28,20 @@ public class MovableScript : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D)))
             {
-                anim.SetInteger("anim", 1);
-                anim.SetBool("Push", true);
-                //anim.SetBool("Pull", false);
+                //anim.SetInteger("anim", 1);
+                PlayerAnimationManager.Instance.ChangeAnim("Push");
             }
             else if (Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A)))
             {
-                anim.SetInteger("anim", 2);
-                anim.SetBool("Pull", true);
-                //anim.SetBool("Push", false);
+                //anim.SetInteger("anim", 2);
+                PlayerAnimationManager.Instance.ChangeAnim("Pull");
             }
         }
 
 
         if (onMove)
         {
-            if (hit.collider != null && Input.GetKeyDown(KeyCode.V) && animMove == false)
+            if (hit.collider != null && Input.GetKeyDown(KeyCode.E) && animMove == false)
             {
                 animMove = true;
                 disableOri = true;
@@ -52,8 +50,8 @@ public class MovableScript : MonoBehaviour
                 box = hit.collider.gameObject;
                 box.GetComponent<FixedJoint2D>().enabled = true;
                 box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
-                Debug.Log(box);
-                Debug.Log("attached^");
+                //Debug.Log(box);
+                //Debug.Log("attached^");
                 onMove = false;
                 disconnect = true;
 
@@ -64,24 +62,20 @@ public class MovableScript : MonoBehaviour
             if (disconnect && transform.position.y <= -1.7)
             {
                 changeAnim = false;
-                anim.SetBool("Idle", true);
-                anim.SetBool("Push", false);
-                anim.SetBool("Push", false);
+                PlayerAnimationManager.Instance.ChangeAnim("Idle");
                 disconnect = false;
                 box.GetComponent<FixedJoint2D>().enabled = false;
                 disableOri = false;
                 onMove = true;
                 animMove = false;
             }
-            else if (hit.collider != null && Input.GetKeyDown(KeyCode.V))
+            else if (hit.collider != null && Input.GetKeyDown(KeyCode.E))
             {
                 changeAnim = false;
-                anim.SetBool("Idle", true);
-                anim.SetBool("Pull", false);
-                anim.SetBool("Push", false);
+                PlayerAnimationManager.Instance.ChangeAnim("Idle");
                 box.GetComponent<FixedJoint2D>().enabled = false;
-                Debug.Log(box);
-                Debug.Log("detached^");
+                //Debug.Log(box);
+                //Debug.Log("detached^");
                 disableOri = false;
                 onMove = true;
                 animMove = false;
