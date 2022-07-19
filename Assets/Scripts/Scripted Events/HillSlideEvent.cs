@@ -9,30 +9,37 @@ public class HillSlideEvent : MonoBehaviour
     private bool allowJump = false;
     
     private GameObject player;
-    private PlayerBehaviour pb;
-    private Rigidbody2D prb;
+    private PlayerBehaviour playerPB;
+    private Rigidbody2D playerRB;
+    private Animator playerAnim;
 
     public Transform slidepoint;
     public Transform landpoint;
-
-    private Coroutine co;
-    
+   
     private void Start()
     {
         player = GameObject.Find("Player");
-        pb = player.GetComponent<PlayerBehaviour>();
-        prb = player.GetComponent<Rigidbody2D>();
+        playerPB = player.GetComponent<PlayerBehaviour>();
+        playerRB = player.GetComponent<Rigidbody2D>();
+        playerAnim = player.GetComponent<Animator>();
     }
 
     public void StartEvent()
     {
-        pb.enabled = false;
-        co = StartCoroutine(Lerp(player.transform.position, slidepoint.transform.position, slideDuration));
+        playerPB.enabled = false;
+        playerAnim.SetBool("Slide",true);
+        StartCoroutine(Lerp(player.transform.position, slidepoint.transform.position, slideDuration));
     }
 
-    public void AllowJump()
+    public void EnterJumpTrigger()
     {
         allowJump = true;
+    }
+
+    public void ExitJumpTrigger()
+    {
+        allowJump = false;
+        playerPB.enabled = true;
     }
 
     private void Update()
@@ -41,10 +48,9 @@ public class HillSlideEvent : MonoBehaviour
         {
             allowJump = false;
             StopAllCoroutines();
-            prb.isKinematic = true;
+            playerRB.isKinematic = true;
             StartCoroutine(LerpJump(player.transform.position, landpoint.transform.position, 1));
-            player.GetComponent<Animator>().SetBool("Jump", true);
-            
+            playerAnim.SetBool("Jump", true);
         }
     }
 
@@ -64,11 +70,11 @@ public class HillSlideEvent : MonoBehaviour
         float time = 0;
         while (time < t)
         {
-            player.transform.position = new Vector3(Mathf.Lerp(start.x, end.x, time / t), end.y + pb.jumpForce / 2 * Mathf.Sin(time / t * Mathf.PI), player.transform.position.z);
+            player.transform.position = new Vector3(Mathf.Lerp(start.x, end.x, time / t), end.y + playerPB.jumpForce / 2 * Mathf.Sin(time / t * Mathf.PI), player.transform.position.z);
             time += Time.deltaTime;
             yield return null;
         }
-        pb.enabled = true;
-        prb.isKinematic = false;
+        playerPB.enabled = true;
+        playerRB.isKinematic = false;
     }
 }

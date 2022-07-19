@@ -16,11 +16,13 @@ public class HillSlideTriggers : MonoBehaviour
     {
         if (other.CompareTag("Player") && gameObject.name == "Start Trigger")
             hse.StartEvent();
+        if (other.CompareTag("Player") && gameObject.name == "Jump Trigger")
+            hse.EnterJumpTrigger();
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") && gameObject.name == "Jump Trigger")
-            hse.AllowJump();
+            hse.ExitJumpTrigger();
     }
 }
