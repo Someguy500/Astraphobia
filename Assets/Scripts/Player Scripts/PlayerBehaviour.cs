@@ -25,6 +25,7 @@ public class PlayerBehaviour : MonoBehaviour
         anim = GetComponent<Animator>();
         
         anim.SetBool("Idle", true);
+
     }
 
     void Jump()
@@ -55,15 +56,21 @@ public class PlayerBehaviour : MonoBehaviour
         {
             transform.Translate(new Vector3(xMove, 0, 0) * (speed * Time.deltaTime));
 
-            if (xMove != 0)
+            if (xMove != 0 && MovableScript.changeAnim == false)
             {
+                anim.SetInteger("anim", 0);
                 anim.SetBool("Idle", false);
                 anim.SetBool("Walk", true);
-            }
+            }       
             else
             {
-                anim.SetBool("Idle", true);
-                anim.SetBool("Walk", false);
+                if(MovableScript.changeAnim == false)
+                {
+                    anim.SetInteger("anim", 0);
+                    anim.SetBool("Idle", true);
+                    anim.SetBool("Walk", false);
+                }
+
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && (isGrounded == true))

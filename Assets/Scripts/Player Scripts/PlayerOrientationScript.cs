@@ -12,16 +12,19 @@ public class PlayerOrientationScript : MonoBehaviour
 
     void Update()
     {
-        Vector3 characterScale = transform.localScale;
-        if (Input.GetAxis("Horizontal") > 0)
+        if (MovableScript.disableOri == false)
         {
-            characterScale.x = 0.25f;
+            Vector3 characterScale = transform.localScale;
+            if (Input.GetAxis("Horizontal") > 0)
+            {
+                characterScale.x = 0.25f;
+            }
+            else if (Input.GetAxis("Horizontal") < 0)
+            {
+                characterScale.x = -0.25f;
+            }
+            transform.localScale = characterScale;
         }
-        else if (Input.GetAxis("Horizontal") < 0)
-        {
-            characterScale.x = -0.25f;
-        }
-        transform.localScale = characterScale;
     }
 
 }
