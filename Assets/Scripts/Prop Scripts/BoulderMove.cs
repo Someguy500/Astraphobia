@@ -28,7 +28,7 @@ public class BoulderMove : MonoBehaviour
             if (roll == 0)
             {
                 roll++;
-                rb.AddForce(new Vector2(-1, 0) * 2);
+                /*rb.AddForce(new Vector2(-0.1f, 0) * 2);*/
                 StartCoroutine(bDelay());
             }
           
