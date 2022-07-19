@@ -29,8 +29,9 @@ public class BoulderMove : MonoBehaviour
             {
                 roll++;
                 rb.AddForce(new Vector2(-1, 0) * 2);
+                StartCoroutine(bDelay());
             }
-            
+          
         }
 
         if (gameObject.transform.position.x <= -29f)
@@ -39,14 +40,21 @@ public class BoulderMove : MonoBehaviour
         }
     }
 
+    IEnumerator bDelay()
+    {       
+        yield return new WaitForSeconds(3.1f);
+        transform.localScale = new Vector3(0.1947076f, 0.1947076f, 0.1947076f);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player" && !(gameObject.transform.position.x >= -29f))
+        if(collision.gameObject.tag == "Player")
         {
             resetPos = true;
             gameObject.transform.position = oriPos;
             roll = 0;
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
+       
         }
     }
 
