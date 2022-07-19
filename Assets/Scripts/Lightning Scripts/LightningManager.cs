@@ -103,6 +103,7 @@ public class LightningManager : MonoBehaviour
         stressManager.LightningStrike();
         postPros.LightningStrike();
         CreatePooledBolt(pos1,pos2, Color.white, 1f);
+        SoundManager.Instance.PlaySoundSolo("Lightning");
     }
     
     void CreatePooledBolt(Vector2 source, Vector2 dest, Color color, float thickness)

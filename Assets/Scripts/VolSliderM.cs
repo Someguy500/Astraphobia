@@ -9,16 +9,12 @@ public class VolSliderM : MonoBehaviour
 {
     
     [SerializeField] private UnityEngine.UI.Slider MSlider;
-    void Start()
+    void Awake()
     {
         MSlider.onValueChanged.AddListener((v) =>
         {
-            Debug.Log(v.ToString("0.00"));
+            SoundManager.Instance.ChangeMVol(v);
         });
-    }
-
-    void Update()
-    {
         
     }
 }
