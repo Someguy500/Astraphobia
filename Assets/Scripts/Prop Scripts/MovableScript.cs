@@ -11,6 +11,7 @@ public class MovableScript : MonoBehaviour
     public static bool changeAnim = false;
     public static bool disableOri = false;
     public Animator anim;
+    private bool animMove = false;
 
     GameObject box;
     private void Start()
@@ -23,24 +24,28 @@ public class MovableScript : MonoBehaviour
         Physics2D.queriesStartInColliders = false; 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance, boxMask);
 
-        if (Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D)))
+        if (animMove)
         {
-            anim.SetInteger("anim", 1);
-            anim.SetBool("Push", true);
-            anim.SetBool("Pull", false);
-        }
-        else if(Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A)))
-        {
-            anim.SetInteger("anim", 2);
-            anim.SetBool("Pull", true);
-            anim.SetBool("Push", false);
+            if (Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D)))
+            {
+                anim.SetInteger("anim", 1);
+                anim.SetBool("Push", true);
+                anim.SetBool("Pull", false);
+            }
+            else if (Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A)))
+            {
+                anim.SetInteger("anim", 2);
+                anim.SetBool("Pull", true);
+                anim.SetBool("Push", false);
+            }
         }
 
 
         if (onMove)
         {
-            if (hit.collider != null && Input.GetKeyDown(KeyCode.V))
+            if (hit.collider != null && Input.GetKeyDown(KeyCode.V) && animMove == false)
             {
+                animMove = true;
                 disableOri = true;
                 changeAnim = true;
               
@@ -66,6 +71,7 @@ public class MovableScript : MonoBehaviour
                 box.GetComponent<FixedJoint2D>().enabled = false;
                 disableOri = false;
                 onMove = true;
+                animMove = false;
             }
             else if (hit.collider != null && Input.GetKeyDown(KeyCode.V))
             {
@@ -78,6 +84,7 @@ public class MovableScript : MonoBehaviour
                 Debug.Log("detached^");
                 disableOri = false;
                 onMove = true;
+                animMove = false;
             }
 
         }         
