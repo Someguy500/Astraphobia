@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ladder
   - LightningInteractables
+  - SoundMan
   layers:
   - Default
   - TransparentFX
