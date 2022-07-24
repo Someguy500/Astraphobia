@@ -138,4 +138,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 493759495110279704}
   roll: 0
-  Player: {fileID: 0}
+  Player: {fileID: 493759495110279708}
+  oriPos: {x: 0, y: 0, z: 0}
+  isLock: 0
