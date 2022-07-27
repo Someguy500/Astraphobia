@@ -22,7 +22,7 @@ public class BoulderMove : MonoBehaviour
 
     public void unlocked()
     {
-        if (Player.transform.position.x >= 31f) //triger range
+        if (Player.transform.position.x >= 31f) //trigger range
         {
             rb.simulated = false;
             rb.simulated = true;
@@ -50,7 +50,7 @@ public class BoulderMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player" && Player.transform.position.x >= 31f)
+        if(collision.gameObject.tag == "Player" && Player.transform.position.x >= 30f)
         {
             resetPos = true;
             gameObject.transform.position = oriPos;

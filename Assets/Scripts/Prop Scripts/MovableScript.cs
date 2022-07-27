@@ -43,6 +43,7 @@ public class MovableScript : MonoBehaviour
         {
             if (hit.collider != null && Input.GetKeyDown(KeyCode.E) && animMove == false)
             {
+                
                 animMove = true;
                 disableOri = true;
                 changeAnim = true;
