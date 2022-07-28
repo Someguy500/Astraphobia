@@ -35,10 +35,19 @@ public class FadingTextScript : MonoBehaviour
 
         if (Player.transform.position.x >= -13 && Player.transform.position.x <= -7)
         {
-            Appear();
             txt.text = texts[0];
+            Appear();
         }
         else if (Player.transform.position.x < -13)
+        {
+            Fade();
+        }
+        else if (Player.transform.position.x >= -4 && Player.transform.position.x <= 3)
+        {
+            txt.text = texts[1];
+            Appear();
+        }
+        else if (Player.transform.position.x < -4)
         {
             Fade();
         }
@@ -46,6 +55,7 @@ public class FadingTextScript : MonoBehaviour
         {
             Fade();
         }
+
 
 
         if (fadeIn)
