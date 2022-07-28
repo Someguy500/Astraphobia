@@ -23,7 +23,7 @@ public class PlayerBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
-        
+
         anim.SetBool("Idle", true);
 
     }
@@ -50,7 +50,7 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
         GroundedCheck();
-        
+
         float xMove = Input.GetAxisRaw("Horizontal");
         if (isZooming == false)
         {
