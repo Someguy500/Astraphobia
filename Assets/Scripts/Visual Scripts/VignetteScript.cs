@@ -27,6 +27,7 @@ public class VignetteScript : MonoBehaviour
     {
         volume.weight = 0.6f;
         GlobalLight2D.intensity = 1f;
+        vignette.intensity.Override(1);
     }
 
     public void vignetteLink() //GL2D to manipulate bg brightness
@@ -93,8 +94,10 @@ public class VignetteScript : MonoBehaviour
     }
     
     private void Update()
-    {      
-        for (int i = 0; i < 3; i++) vignette.intensity.Override(Mathf.Clamp((StressManager.stressLvl / 100) * (Mathf.Sin(Time.time) + i), 0.0f, 1f)); 
+    {
+
+        
+        /*for (int i = 0; i < 3; i++) vignette.intensity.Override(Mathf.Clamp((StressManager.stressLvl / 100) * (Mathf.Sin(Time.time) + i), 0.0f, 1f)); */
         //Constant Vignette Values Bouncing
     }
 
