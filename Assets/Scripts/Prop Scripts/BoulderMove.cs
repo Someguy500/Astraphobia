@@ -10,6 +10,7 @@ public class BoulderMove : MonoBehaviour
     public Vector3 oriPos;
     public static bool resetPos;
     public bool isLock = false;
+    private bool noCol = false;
 
 	void Start()
 	{
@@ -22,7 +23,7 @@ public class BoulderMove : MonoBehaviour
 
     public void unlocked()
     {
-        if (Player.transform.position.x >= 31f) //trigger range
+        if (Player.transform.position.x >= 30f) //trigger range
         {
             rb.simulated = false;
             rb.simulated = true;
@@ -40,6 +41,15 @@ public class BoulderMove : MonoBehaviour
         {
             roll = 1;
         }
+
+        if(Player.transform.position.x <= 32f)
+        {
+            noCol = true;
+        }
+        else
+        {
+            noCol = false;
+        }
     }
 
     IEnumerator bDelay()
@@ -50,7 +60,8 @@ public class BoulderMove : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player" && Player.transform.position.x >= 30f)
+        /*if(collision.gameObject.tag == "Player" && Player.transform.position.x >= 34f)*/
+        if (collision.gameObject.tag == "Player" && noCol == false)
         {
             resetPos = true;
             gameObject.transform.position = oriPos;
