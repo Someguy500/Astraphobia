@@ -64,11 +64,6 @@ public class LightningManager : MonoBehaviour
         
         Vector3 temp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (firstLightning) //specified lightning strike
-        {
-            temp = new Vector3(-15.01f, -0.34f, -10.00f);
-        }
-
         cd += Time.deltaTime;
         pos1 = transform.GetChild(1).position;
         pos2 = new Vector2(temp.x, temp.y);
@@ -89,7 +84,7 @@ public class LightningManager : MonoBehaviour
             }
         }
 
-     
+
         //self generated lightning once
         if (indexName == "SampleScene" && firstLightning == false)
         {
@@ -100,7 +95,6 @@ public class LightningManager : MonoBehaviour
         IEnumerator delay(){
             yield return new WaitForSeconds(0.8f);
             CreateLightning();
-            Debug.Log(temp);
         }
 
         if (Input.GetKey(KeyCode.Mouse0) && zoomCam.isFullZoom && cd >= lightningDelay)
