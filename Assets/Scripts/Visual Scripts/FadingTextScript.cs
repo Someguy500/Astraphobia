@@ -11,12 +11,17 @@ public class FadingTextScript : MonoBehaviour
     [SerializeField] public static bool fadeOut = false;
     [SerializeField] private string[] texts = new string[5];
     [SerializeField] private TextMeshProUGUI txt;
+    Mesh mesh;
+    Vector3[] vertices;
+    List<int> wordIndexes;
+    List<int> wordLengths;
 
     void Start()
     {
         fadeIn = false;
         fadeOut = false;
         UIGrp.alpha = 0;
+
     }
 
 
@@ -30,8 +35,25 @@ public class FadingTextScript : MonoBehaviour
         fadeOut = true;
     }
 
+    Vector2 Wobble(float time)
+    {
+        return new Vector2(Mathf.Sin(time * 1.1f), Mathf.Cos(time * 1.1f));
+    }
+
     void Update()
     {
+        txt.ForceMeshUpdate();
+        mesh = txt.mesh;
+        vertices = mesh.vertices;
+
+        for (int i = 0; i < vertices.Length; i++) //text wobble effect
+        {
+            Vector3 offset = Wobble(Time.time + i);
+            vertices[i] = vertices[i] + offset;
+        }
+
+        mesh.vertices = vertices;
+        txt.canvasRenderer.SetMesh(mesh);
 
         if (Player.transform.position.x >= -13 && Player.transform.position.x <= -7)
         {
