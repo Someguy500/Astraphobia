@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 //How to Generate Shockingly Good 2D Lightning Effects in Unity (C#) by Aaron Davis
 //URL : https://gamedevelopment.tutsplus.com/tutorials/how-to-generate-shockingly-good-2d-lightning-effects-in-unity-c--cms-21275
@@ -22,6 +23,11 @@ public class LightningManager : MonoBehaviour
     private Vector2 pos1, pos2;
     private float cd;
     private static readonly int IsStruck = Animator.StringToHash("isStruck");
+
+    String indexName;
+    private bool firstLightning = false;
+
+    public object SceneManagement { get; private set; }
 
     private void Awake()
     {
@@ -46,6 +52,9 @@ public class LightningManager : MonoBehaviour
             bolt.SetActive(false);
             inactiveBolts.Add(bolt);
         }
+
+        firstLightning = false;
+        indexName = SceneManager.GetActiveScene().name;
     }
 
     void Update()
@@ -54,7 +63,12 @@ public class LightningManager : MonoBehaviour
         LightningBolt bolt;
         
         Vector3 temp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        
+
+        if (firstLightning) //specified lightning strike
+        {
+            temp = new Vector3(-15.01f, -0.34f, -10.00f);
+        }
+
         cd += Time.deltaTime;
         pos1 = transform.GetChild(1).position;
         pos2 = new Vector2(temp.x, temp.y);
@@ -75,7 +89,21 @@ public class LightningManager : MonoBehaviour
             }
         }
 
-        if(Input.GetKey(KeyCode.Mouse0) && zoomCam.isFullZoom && cd >= lightningDelay)
+     
+        //self generated lightning once
+        if (indexName == "SampleScene" && firstLightning == false)
+        {
+            firstLightning = true;
+            StartCoroutine(delay()); 
+        }
+
+        IEnumerator delay(){
+            yield return new WaitForSeconds(0.8f);
+            CreateLightning();
+            Debug.Log(temp);
+        }
+
+        if (Input.GetKey(KeyCode.Mouse0) && zoomCam.isFullZoom && cd >= lightningDelay)
         { 
             RaycastHit2D hit = Physics2D.Raycast(pos1,pos2 - pos1, Vector2.Distance(pos1,pos2));
             
