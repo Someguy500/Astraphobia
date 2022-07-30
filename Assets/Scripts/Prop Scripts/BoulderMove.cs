@@ -28,11 +28,13 @@ public class BoulderMove : MonoBehaviour
             rb.simulated = false;
             rb.simulated = true;
             rb.constraints = RigidbodyConstraints2D.None;
+
             if (roll == 0)
             {
                 roll++;
                 /*rb.AddForce(new Vector2(-0.1f, 0) * 2);*/
                 StartCoroutine(bDelay());
+                SoundManager.Instance.PlaySoundSolo("Boulder");
             }
           
         }

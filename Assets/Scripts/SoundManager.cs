@@ -11,6 +11,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource SoundSourceSolo;
     [SerializeField] private AudioClip[] SoundEffectCont;
     [SerializeField] private AudioSource SoundSourceCont;
+    [SerializeField] private AudioClip[] SoundEffectAmbi;
+    [SerializeField] private AudioSource SoundSourceAmbi;
     private GameObject[] singletonCheck;
     private float MasVol = 0.5f;
     private float SFXVol = 0.5f;
@@ -41,7 +43,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySoundCont(string ContSoundName) //Footsteps, Lightning
+    public void PlaySoundCont(string ContSoundName) //Footsteps
     {
         for(int i = 0; i < SoundEffectCont.Length; i++)
         {
@@ -49,6 +51,18 @@ public class SoundManager : MonoBehaviour
             {
                 SoundSourceCont.clip = SoundEffectCont[i];
                 SoundSourceCont.Play();
+            }
+        }
+    }
+
+    public void PlaySoundAmbi(string AmbiSoundName) //Ambient
+    {
+        for (int i = 0; i < SoundEffectCont.Length; i++)
+        {
+            if (SoundEffectCont[i].name == AmbiSoundName)
+            {
+                SoundSourceAmbi.clip = SoundEffectAmbi[i];
+                SoundSourceAmbi.Play();
             }
         }
     }
