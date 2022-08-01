@@ -26,6 +26,7 @@ public class LightningManager : MonoBehaviour
 
     String indexName;
     private bool firstLightning = false;
+    [SerializeField] VignetteScript vScript;
 
     public object SceneManagement { get; private set; }
 
@@ -94,7 +95,8 @@ public class LightningManager : MonoBehaviour
 
         IEnumerator delay(){
             yield return new WaitForSeconds(0.8f);
-            CreateLightning();
+            vScript.LightningStrike();
+            SoundManager.Instance.PlaySoundSolo("Lightning");
         }
 
         if (Input.GetKey(KeyCode.Mouse0) && zoomCam.isFullZoom && cd >= lightningDelay)

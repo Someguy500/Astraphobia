@@ -32,7 +32,7 @@ public class VignetteScript : MonoBehaviour
 
     public void vignetteLink() //GL2D to manipulate bg brightness
     {
-        GlobalLight2D.intensity = 1.0f;
+        GlobalLight2D.intensity = 1.5f;
         StartCoroutine(Period());
         StartCoroutine(SecPeriod());
     }
@@ -40,7 +40,7 @@ public class VignetteScript : MonoBehaviour
     IEnumerator Period()
     {
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
         GlobalLight2D.intensity = 0.5f;
 
         if (StressManager.stressLvl >= 100)
@@ -51,7 +51,7 @@ public class VignetteScript : MonoBehaviour
 
     IEnumerator SecPeriod()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.4f);
         GlobalLight2D.intensity = 2.5f;
     }
 
