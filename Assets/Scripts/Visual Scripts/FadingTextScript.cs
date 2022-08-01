@@ -37,7 +37,7 @@ public class FadingTextScript : MonoBehaviour
 
     Vector2 Wobble(float time)
     {
-        return new Vector2(Mathf.Sin(time * 1.1f), Mathf.Cos(time * 1.1f));
+        return new Vector2(Mathf.Sin(time * 0.4f), Mathf.Cos(time * 0.2f));
     }
 
     void Update()
@@ -60,7 +60,7 @@ public class FadingTextScript : MonoBehaviour
             txt.text = texts[0];
             Appear();
         }
-        else if (Player.transform.position.x < -13)
+        else if (Player.transform.position.x < -13 && Player.transform.position.x > 7)
         {
             Fade();
         }
