@@ -28,6 +28,7 @@ public class VignetteScript : MonoBehaviour
         volume.weight = 0.6f;
         GlobalLight2D.intensity = 1f;
         vignette.intensity.Override(1);
+        vignette.smoothness.Override(1.4f);
     }
 
     public void vignetteLink() //GL2D to manipulate bg brightness

@@ -99,7 +99,8 @@ public class LightningManager : MonoBehaviour
             SoundManager.Instance.PlaySoundSolo("Lightning");
         }
 
-        if (Input.GetKey(KeyCode.Mouse0) && zoomCam.isFullZoom && cd >= lightningDelay)
+        /*if (Input.GetKey(KeyCode.Mouse0) && zoomCam.isFullZoom && cd >= lightningDelay)*/
+        if (Input.GetKey(KeyCode.Mouse0) && cd >= lightningDelay)
         { 
             RaycastHit2D hit = Physics2D.Raycast(pos1,pos2 - pos1, Vector2.Distance(pos1,pos2));
             
