@@ -624,7 +624,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 238660057}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.93, y: -3.96, z: 0}
+  m_LocalPosition: {x: 6.59, y: -3.69, z: 0}
   m_LocalScale: {x: 1.010625, y: 1.864589, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1373,7 +1373,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 2
+  orthographic size: 2.8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1397,7 +1397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.090017, y: -3.1157355, z: -10.152977}
+  m_LocalPosition: {x: 24.109983, y: -3.1157355, z: -10.152977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2345,6 +2345,7 @@ GameObject:
   - component: {fileID: 831115949}
   - component: {fileID: 831115948}
   - component: {fileID: 831115950}
+  - component: {fileID: 831115951}
   m_Layer: 0
   m_Name: Player Camera
   m_TagString: Untagged
@@ -2374,7 +2375,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1670789330348213477}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 2
+    OrthographicSize: 2.8
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -2398,7 +2399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831115947}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.090017, y: -3.1157355, z: -10.152977}
+  m_LocalPosition: {x: 22.609983, y: -3.1157355, z: -10.152977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2422,8 +2423,23 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0}
   isFullZoom: 0
   maxCamSize: 2.8
-  minCamSize: 2
+  minCamSize: 2.8
   zoomRate: 0.5
+--- !u!114 &831115951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831115947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d70cc20219cd84593f67d248eafe36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Offset: {x: 1.5, y: 0, z: 0}
+  m_ApplyAfter: 1
+  m_PreserveComposition: 0
 --- !u!1 &847195049
 GameObject:
   m_ObjectHideFlags: 0
@@ -8335,7 +8351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275065671}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.19, y: -5.04, z: -0.13718645}
+  m_LocalPosition: {x: 4.19, y: -5.53, z: -0.13718645}
   m_LocalScale: {x: 1.9375, y: 3.7289062, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11204,7 +11220,7 @@ GameObject:
   - component: {fileID: 2085901161}
   - component: {fileID: 2085901160}
   - component: {fileID: 2085901165}
-  - component: {fileID: 2085901164}
+  - component: {fileID: 2085901166}
   m_Layer: 6
   m_Name: Bridge
   m_TagString: Untagged
@@ -11269,7 +11285,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085901159}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ac04a303eb94c9f4db53a95f1ab775ec, type: 2}
   m_CullingMode: 0
@@ -11348,18 +11364,6 @@ Transform:
   m_Father: {fileID: 847195050}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2085901164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085901159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eac05d7a30263c4ca11da246f1450fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &2085901165
 Rigidbody2D:
   serializedVersion: 4
@@ -11381,6 +11385,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2085901166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085901159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eac05d7a30263c4ca11da246f1450fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2132442101
 GameObject:
   m_ObjectHideFlags: 0
@@ -11900,7 +11916,7 @@ PrefabInstance:
       objectReference: {fileID: 814006817}
     - target: {fileID: 5215686531531449563, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
       propertyPath: jumpForce
-      value: 3.3
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5215686531531449563, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
       propertyPath: moveScript
@@ -12044,7 +12060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6867427922359711907, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.97
+      value: 21.73
       objectReference: {fileID: 0}
     - target: {fileID: 6867427922359711907, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
       propertyPath: m_LocalPosition.y
