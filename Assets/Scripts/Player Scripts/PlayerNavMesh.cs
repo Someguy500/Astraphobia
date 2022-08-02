@@ -23,9 +23,9 @@ public class PlayerNavMesh : MonoBehaviour
         float cosWave = Mathf.Cos(Time.time) * frequency * amplitudeX;
         float sinWave = Mathf.Sin(Time.time) * frequency * amplitudeY;
 
-        int randNum = Random.Range( 1, 5);
+        int randNum = Random.Range( 1, 7);
 
-        if (randNum == 2)
+        if (randNum == 4)
         {
             for (int i = 0; i < 3; i++) { transform.localScale = new Vector3(Mathf.Clamp(objectSize * (Mathf.Sin(Time.time) + i), 0.2755535f, 0.3378734f), Mathf.Clamp(objectSize * (Mathf.Sin(Time.time) + i), 0.2755535f, 0.3378734f)); }
         }

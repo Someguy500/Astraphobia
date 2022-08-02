@@ -617,7 +617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleMult: 0.5
   cam: {fileID: 831115947}
-  parallaxEffect: 0.5
+  parallaxEffect: 0.8
 --- !u!212 &239284792
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1192,7 +1192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleMult: 0.5
   cam: {fileID: 831115947}
-  parallaxEffect: 0.5
+  parallaxEffect: 0.8
 --- !u!212 &396296854
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2417,12 +2417,12 @@ MonoBehaviour:
   Player: {fileID: 979705098}
   UIGrp: {fileID: 1323210874}
   texts:
-  - Hold LMB to Summon Lightning
+  - Hold LMB to use Lightning
   - Press Space to Jump
-  - Use Lightning on the Tree
+  - Summon Lightning on the Tree
+  - Signs are Checkpoints
+  - Beware
   - Press E to Interact
-  - 
-  - 
   txt: {fileID: 814006820}
 --- !u!114 &814006820
 MonoBehaviour:
@@ -2665,7 +2665,7 @@ Transform:
   - {fileID: 2085901163}
   - {fileID: 1565700532}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &872530507
 GameObject:
@@ -9038,7 +9038,7 @@ RectTransform:
   - {fileID: 814006818}
   - {fileID: 1674719124}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9242,7 +9242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleMult: 0.5
   cam: {fileID: 831115947}
-  parallaxEffect: 0.5
+  parallaxEffect: 0.8
 --- !u!212 &1360395444
 SpriteRenderer:
   m_ObjectHideFlags: 0

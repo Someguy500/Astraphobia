@@ -15,6 +15,7 @@ public class FadingTextScript : MonoBehaviour
     Vector3[] vertices;
     List<int> wordIndexes;
     List<int> wordLengths;
+    float wobbleVal = 0.1f;
 
     void Start()
     {
@@ -37,7 +38,7 @@ public class FadingTextScript : MonoBehaviour
 
     Vector2 Wobble(float time)
     {
-        return new Vector2(Mathf.Sin(time * 0.2f), Mathf.Cos(time * 0.2f));
+        return new Vector2(Mathf.Sin(time * wobbleVal), Mathf.Cos(time * wobbleVal));
     }
 
     void Update()
@@ -55,8 +56,11 @@ public class FadingTextScript : MonoBehaviour
         mesh.vertices = vertices;
         txt.canvasRenderer.SetMesh(mesh);
 
-
-        if (Player.transform.position.x >= -13 && Player.transform.position.x <= -7)
+        if(Player.transform.position.x < -13)
+        {
+            Fade();
+        }
+        else if (Player.transform.position.x >= -13 && Player.transform.position.x <= -7)
         {
             txt.text = texts[0];
             Appear();
@@ -65,14 +69,36 @@ public class FadingTextScript : MonoBehaviour
                 txt.text = texts[1];
             }
         }
-        else if (Player.transform.position.x < -13 && Player.transform.position.x > 7)
-        {
+        else if (Player.transform.position.x >= -7 && Player.transform.position.x <= -4)
+        {     
             Fade();
         }
         else if (Player.transform.position.x >= -4 && Player.transform.position.x <= 3)
         {
             txt.text = texts[2];
             Appear();
+        }
+        else if(Player.transform.position.x > 3 && Player.transform.position.x < 18)
+        {
+            Fade();
+        }
+        else if (Player.transform.position.x >= 18 && Player.transform.position.x <= 22)
+        {
+            txt.text = texts[3];
+            Appear();
+        }
+        else if (Player.transform.position.x > 22 && Player.transform.position.x < 27) //half done
+        {
+            Fade();
+        }
+        else if (Player.transform.position.x >= 27 && Player.transform.position.x <= 32)
+        {
+            txt.text = texts[4];
+            Appear();
+        }
+        else if (Player.transform.position.x > 32) //half done
+        {
+            Fade();
         }
         else if (Player.transform.position.x < -3.3)
         {
