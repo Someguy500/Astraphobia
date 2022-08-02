@@ -1,13 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerOrientationScript : MonoBehaviour
 {
+    private float scale;
 
-    private void flip()
+    private void Awake()
     {
-
+        scale = transform.localScale.x;
     }
 
     void Update()
@@ -17,11 +19,11 @@ public class PlayerOrientationScript : MonoBehaviour
             Vector3 characterScale = transform.localScale;
             if (Input.GetAxis("Horizontal") > 0)
             {
-                characterScale.x = 0.25f;
+                characterScale.x = scale;
             }
             else if (Input.GetAxis("Horizontal") < 0)
             {
-                characterScale.x = -0.25f;
+                characterScale.x = -scale;
             }
             transform.localScale = characterScale;
         }
