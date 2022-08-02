@@ -32,7 +32,7 @@ public class BoulderMove : MonoBehaviour
             if (roll == 0)
             {
                 roll++;
-                rb.AddForce(new Vector2(0, 0));
+                rb.AddForce(-transform.right);
                 SoundManager.Instance.PlaySoundSolo("Boulder");
             }
           
@@ -68,5 +68,10 @@ public class BoulderMove : MonoBehaviour
     private void Update()
     {
         unlocked();
+
+        if (transform.position.x <= -22.63)
+        {
+            rb.AddForce(-transform.right * Time.deltaTime);
+        }
     }
 }
