@@ -32,8 +32,7 @@ public class BoulderMove : MonoBehaviour
             if (roll == 0)
             {
                 roll++;
-                /*rb.AddForce(new Vector2(-0.1f, 0) * 2);*/
-                StartCoroutine(bDelay());
+                rb.AddForce(-transform.right);
                 SoundManager.Instance.PlaySoundSolo("Boulder");
             }
           
@@ -54,12 +53,6 @@ public class BoulderMove : MonoBehaviour
         }
     }
 
-    IEnumerator bDelay()
-    {       
-        yield return new WaitForSeconds(3.1f);
-        transform.localScale = new Vector3(0.1947076f, 0.1947076f, 0.1947076f);
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         /*if(collision.gameObject.tag == "Player" && Player.transform.position.x >= 34f)*/
@@ -75,5 +68,10 @@ public class BoulderMove : MonoBehaviour
     private void Update()
     {
         unlocked();
+
+        if (transform.position.x <= -22.63)
+        {
+            rb.AddForce(-transform.right * Time.deltaTime);
+        }
     }
 }

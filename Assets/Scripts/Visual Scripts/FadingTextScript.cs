@@ -74,9 +74,9 @@ public class FadingTextScript : MonoBehaviour
             txt.text = texts[2];
             Appear();
         }
-        else if (Player.transform.position.x < -4)
+        else if (Player.transform.position.x < -3.3)
         {
-            Fade();
+            UIGrp.alpha = 0;
         }
         else
         {
