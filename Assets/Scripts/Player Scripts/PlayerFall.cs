@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerFall : MonoBehaviour
 {
-    float fixedPosY = -7.06f;
+    float fixedPosY = -3.98f;
     private bool isDead = false;
     public static Vector3 origin;
     public Rigidbody2D rb;
