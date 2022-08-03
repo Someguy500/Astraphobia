@@ -11987,7 +11987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5215686531531449563, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
       propertyPath: speed
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5215686531531449563, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
       propertyPath: IGTexts
@@ -11995,12 +11995,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5215686531531449563, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
       propertyPath: jumpForce
-      value: 2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5215686531531449563, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
       propertyPath: moveScript
       value: 
       objectReference: {fileID: 5215686532025973832}
+    - target: {fileID: 5215686531531449565, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7018471
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215686531531449565, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
+      propertyPath: m_Size.y
+      value: 8.064855
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215686531531449565, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0147304535
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215686531531449565, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.077040195
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215686531531449565, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215686531531449565, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5215686531531449565, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
+      propertyPath: m_UsedByComposite
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5215686531531449574, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
       propertyPath: CPLayerMask.m_Bits
       value: 2048
@@ -12545,7 +12573,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}

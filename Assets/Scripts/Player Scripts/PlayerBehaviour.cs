@@ -15,6 +15,7 @@ public class PlayerBehaviour : MonoBehaviour
     private float extraJumpSpace = 0.02f;
     [SerializeField] private LayerMask platLayerMask;
     [SerializeField] private float sizeScale = 0.25f;
+    float fricVal = 0f;
 
     private Animator anim;
 
