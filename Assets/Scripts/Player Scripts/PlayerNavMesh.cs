@@ -9,7 +9,8 @@ public class PlayerNavMesh : MonoBehaviour
     [SerializeField] private GameObject player;
     private NavMeshAgent navMeshAgent;
     private float offsetX = 1f, offsetY = 1f, frequency = 0.1f;
-    private float objectSize = 0.2937263f;
+    private float objectSize = 0.275535f;
+    bool addOne = false;
 
     private void Awake()
     {
@@ -23,12 +24,21 @@ public class PlayerNavMesh : MonoBehaviour
         float cosWave = Mathf.Cos(Time.time) * frequency * amplitudeX;
         float sinWave = Mathf.Sin(Time.time) * frequency * amplitudeY;
 
-        int randNum = Random.Range( 1, 7);
+/*        float speed = 1f;
+        float depth = 2f;*/
 
-        if (randNum == 4)
+        int randNum = Random.Range(1, 6);
+
+        if (randNum == 2)
         {
-            for (int i = 0; i < 3; i++) { transform.localScale = new Vector3(Mathf.Clamp(objectSize * (Mathf.Sin(Time.time) + i), 0.2755535f, 0.3378734f), Mathf.Clamp(objectSize * (Mathf.Sin(Time.time) + i), 0.2755535f, 0.3378734f)); }
+            for (float i = 0; i < 3; i++) { transform.localScale = new Vector3(Mathf.Clamp(objectSize * (Mathf.Sin(Time.time * -0.5f) + i), 0.275535f, 0.3050219f), Mathf.Clamp(objectSize * (Mathf.Sin(Time.time * -0.5f) + i), 0.2755535f, 0.3050219f)); }
         }
+
+        /*            float scaleInOut = (Mathf.Sin(Time.time * speed);
+                    transform.localScale = new Vector2(scaleInOut, scaleInOut) * depth;
+                    Debug.Log(scaleInOut);*/ //scales spirit
+
+
 
         navMeshAgent.transform.position = new Vector3(cosWave * movePositionTransform.position.x + offsetX + player.transform.position.x , sinWave * movePositionTransform.position.y + offsetY + player.transform.position.y, 0);
 
