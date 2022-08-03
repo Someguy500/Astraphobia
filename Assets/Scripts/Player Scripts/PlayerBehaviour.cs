@@ -54,7 +54,10 @@ public class PlayerBehaviour : MonoBehaviour
         float xMove = Input.GetAxisRaw("Horizontal");
         if (isZooming == false)
         {
-            transform.Translate(new Vector3(xMove, 0, 0) * (speed * Time.deltaTime));
+            //transform.Translate(new Vector3(xMove, 0, 0) * (speed * Time.deltaTime));
+            //rb.velocity = new Vector2(xMove * speed, rb.velocity.y);
+            if (Mathf.Abs(rb.velocity.x) < speed)
+                rb.AddForce(new Vector2(xMove * speed, 0), ForceMode2D.Force);
 
             if (xMove != 0 && MovableScript.changeAnim == false)
             {
