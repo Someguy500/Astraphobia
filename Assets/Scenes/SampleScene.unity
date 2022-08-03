@@ -667,7 +667,7 @@ SpriteRenderer:
   m_Size: {x: 80, y: 14.4140625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &239284793
@@ -1242,7 +1242,7 @@ SpriteRenderer:
   m_Size: {x: 80, y: 14.4140625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &396296855
@@ -2569,7 +2569,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 0.19066148, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -9292,7 +9292,7 @@ SpriteRenderer:
   m_Size: {x: 80, y: 14.4140625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &1360395445
@@ -11984,11 +11984,11 @@ PrefabInstance:
     - target: {fileID: 5215686531531449563, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
       propertyPath: fTS
       value: 
-      objectReference: {fileID: 814006819}
+      objectReference: {fileID: 0}
     - target: {fileID: 5215686531531449563, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
       propertyPath: IGTexts
       value: 
-      objectReference: {fileID: 814006817}
+      objectReference: {fileID: 0}
     - target: {fileID: 5215686531531449563, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
       propertyPath: jumpForce
       value: 3
