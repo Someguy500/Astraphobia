@@ -11,24 +11,33 @@ public class HillSlideEvent : MonoBehaviour
     private GameObject player;
     private PlayerBehaviour playerPB;
     private Rigidbody2D playerRB;
+    private BoxCollider2D playerCol;
     private Animator playerAnim;
 
+    private Vector2 playerColSize;
     public Transform slidepoint;
     public Transform landpoint;
+
+    private bool sliding;
    
     private void Start()
     {
         player = GameObject.Find("Player");
         playerPB = player.GetComponent<PlayerBehaviour>();
         playerRB = player.GetComponent<Rigidbody2D>();
+        playerCol = player.GetComponent<BoxCollider2D>();
         playerAnim = player.GetComponent<Animator>();
+
+        playerColSize = playerCol.size;
     }
 
     public void StartEvent()
     {
         playerPB.enabled = false;
+        playerCol.size = new Vector2(playerCol.size.x, 1);
+        sliding = true;
         PlayerAnimationManager.Instance.ChangeAnim("Slide");
-        StartCoroutine(Lerp(player.transform.position, slidepoint.transform.position, slideDuration));
+        //StartCoroutine(Lerp(player.transform.position, slidepoint.transform.position, slideDuration));
     }
 
     public void EnterJumpTrigger()
@@ -39,11 +48,16 @@ public class HillSlideEvent : MonoBehaviour
     public void ExitJumpTrigger()
     {
         allowJump = false;
+        sliding = false;
         playerPB.enabled = true;
+        playerCol.size = playerColSize;
     }
 
     private void Update()
     {
+        if (sliding)
+            playerRB.AddForce(Vector2.right * 10, ForceMode2D.Force);
+        
         if (Input.GetKeyDown(KeyCode.Space) && (allowJump))
         {
             allowJump = false;
