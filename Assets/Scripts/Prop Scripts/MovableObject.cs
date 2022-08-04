@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class MovableObject : PlayerBehaviour
 {
-    GameObject Player;
-    private Rigidbody2D rb;
+    [SerializeField] GameObject Player;
+    public Rigidbody2D rb;
     private float objectScale = 0.25f;
+    float offsetX = 1f;
+    float offsetY = 0;
 
     private void Start()
     {
+        rb.mass = 210;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -31,15 +34,20 @@ public class MovableObject : PlayerBehaviour
             transform.localScale = characterScale;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && CarryScript.isObject)
-        {
-            PlayerAnimationManager.Instance.ChangeAnim("Jump");
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
-
         if (CarryScript.isObject)
         {
-            
+            rb.mass = 3;
+            transform.position = Player.transform.position;
+            transform.position = new Vector3(transform.position.x + offsetX, transform.position.y + offsetY, 0);
+        }
+        else
+        {
+            rb.mass = 210;
+        }
+
+        if(CarryScript.isObject)
+        {
+
         }
     }
 }

@@ -12,7 +12,7 @@ public class MassManipulator : MonoBehaviour
     {
 /*        bCol.isTrigger = true;
         rb.constraints = RigidbodyConstraints2D.FreezePositionY;*/
-        rb.mass = 210;
+        
     }
 
     void Update()

@@ -79,7 +79,7 @@ public class PlayerBehaviour : MonoBehaviour
                 PlayerAnimationManager.Instance.ChangeAnim("Idle");
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded && CarryScript.isObject == false)
             {
                 PlayerAnimationManager.Instance.ChangeAnim("Jump");
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);

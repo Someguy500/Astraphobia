@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MovableScript : MonoBehaviour
 {
-    public float distance = 1f;
+    public float distance = 2f;
     public LayerMask boxMask;
     bool onMove = true;
     bool disconnect = false;
