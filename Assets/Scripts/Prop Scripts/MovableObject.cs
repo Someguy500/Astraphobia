@@ -24,7 +24,7 @@ public class MovableObject : PlayerBehaviour
         if (Mathf.Abs(rb.velocity.x) < speed && CarryScript.isObject) //Movement
             rb.AddForce(new Vector2(xMove * speed, 0), ForceMode2D.Force);
 
-        if (CarryScript.isObject)
+        if (CarryScript.isObject && CarryScript.box == this.gameObject)
         {
             rb.mass = 3;
             transform.position = Player.transform.position;

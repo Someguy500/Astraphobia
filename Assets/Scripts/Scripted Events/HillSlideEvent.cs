@@ -56,7 +56,7 @@ public class HillSlideEvent : MonoBehaviour
     private void Update()
     {
         if (sliding)
-            playerRB.AddForce(Vector2.right * 10, ForceMode2D.Force);
+            playerRB.AddForce(Vector2.right * 5, ForceMode2D.Force);
         
         if (Input.GetKeyDown(KeyCode.Space) && (allowJump))
         {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarryScript : MonoBehaviour
 {
-    GameObject box;
+    public static GameObject box;
     public float distance = 1f;
     public LayerMask boxMask;
     bool disconnect = false;
@@ -47,7 +47,7 @@ public class CarryScript : MonoBehaviour
         }
 
         if (hit.collider != null && Input.GetKeyDown(KeyCode.E) && animMove == false) 
-        {
+        {       
             isObject = true;
             animMove = true;
             disableOri = true;

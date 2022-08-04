@@ -86,7 +86,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -225,9 +225,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: da800000e87f0000
-      m_LastClickedID: 32744
-      m_ExpandedIDs: acedffff8aefffff6af1ffff50f3ffff40f5ffff20f7ffff10fbffffba800000
+      m_SelectedIDs: 86680100
+      m_LastClickedID: 92294
+      m_ExpandedIDs: 1abcf4ffc6bcf4ff80bef4ff46c3f4ff1cc8f4ff0ecaf4ffc4cbf4ffdacdf4ff2ed2f4ff7ad8f4ffacedffff8aefffff6af1ffff50f3ffff40f5ffff20f7ffff10fbfffff4ffffffba800000cc620100446301000668010066680100aa690100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -525,9 +525,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 14.138838, y: 8.37572, z: -0.15994549}
+    m_Target: {x: 18.836565, y: 1.7253584, z: 0.8035275}
     speed: 2
-    m_Value: {x: 14.138838, y: 8.37572, z: -0.15994549}
+    m_Value: {x: 18.836565, y: 1.7253584, z: 0.8035275}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -578,9 +578,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 44.2732
+    m_Target: 32.547375
     speed: 2
-    m_Value: 44.2732
+    m_Value: 32.547375
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -705,8 +705,8 @@ MonoBehaviour:
     y: 0
     width: 440
     height: 636
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -722,7 +722,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -731,15 +731,15 @@ MonoBehaviour:
     y: 636
     width: 1503
     height: 311
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
   - {fileID: 13}
   - {fileID: 14}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -781,21 +781,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Prop Scripts
+    - Assets/Scripts/Scripted Events
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Prop Scripts
+  - Assets/Scripts/Scripted Events
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity (IL)\Unity (Projects)\Astraphobia
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 180}
-    m_SelectedIDs: 78740000
-    m_LastClickedID: 29816
+    scrollPos: {x: 0, y: 98}
+    m_SelectedIDs: 7a740000
+    m_LastClickedID: 29818
     m_ExpandedIDs: 000000003474000036740000387400003a7400003c7400003e74000040740000427400004474000046740000487400004a7400004c7400004e740000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -849,9 +849,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 86680100
+    m_LastClickedInstanceID: 92294
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000647300000000000066710000e6120100f8120100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -938,7 +938,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 32744
+  m_LastSelectedObjectID: 92586
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
