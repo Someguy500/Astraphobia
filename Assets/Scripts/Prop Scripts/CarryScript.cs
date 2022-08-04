@@ -13,6 +13,12 @@ public class CarryScript : MonoBehaviour
     public Animator anim;
     private bool animMove = false;
     public static bool isObject = false;
+    private Rigidbody2D playerRb;
+
+    private void Awake()
+    {
+        playerRb = GetComponent<Rigidbody2D>();
+    }
 
     private void Update()
     {
@@ -21,11 +27,20 @@ public class CarryScript : MonoBehaviour
 
         if (animMove) //animation switching from push and pull
         {
-            if (Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D)))
+
+            if (playerRb.velocity.x < 0 && MovableObject.backCarry)
             {
                 PlayerAnimationManager.Instance.ChangeAnim("Push");
             }
-            else if (Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A)))
+            else if (playerRb.velocity.x > 0 && MovableObject.backCarry)
+            {
+                PlayerAnimationManager.Instance.ChangeAnim("Pull");
+            }
+            else if (playerRb.velocity.x > 0)
+            {
+                PlayerAnimationManager.Instance.ChangeAnim("Push");
+            }
+            else if (playerRb.velocity.x < 0)
             {
                 PlayerAnimationManager.Instance.ChangeAnim("Pull");
             }

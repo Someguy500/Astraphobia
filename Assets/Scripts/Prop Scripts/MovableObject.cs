@@ -8,7 +8,8 @@ public class MovableObject : PlayerBehaviour
     public Rigidbody2D rb;
     private float objectScale = 0.25f;
     float offsetX = 1f;
-    float offsetY = 0;
+    float offsetY = -0.11f;
+    public static bool backCarry = false;
 
     private void Start()
     {
@@ -23,22 +24,20 @@ public class MovableObject : PlayerBehaviour
         if (Mathf.Abs(rb.velocity.x) < speed && CarryScript.isObject) //Movement
             rb.AddForce(new Vector2(xMove * speed, 0), ForceMode2D.Force);
 
-        //Change Orientation
-        if (CarryScript.disableOri == false && CarryScript.isObject)
-        {
-            Vector3 characterScale = transform.localScale;
-            if (Input.GetAxis("Horizontal") > 0)
-                characterScale.x = objectScale;
-            else if (Input.GetAxis("Horizontal") < 0)
-                characterScale.x = -objectScale;
-            transform.localScale = characterScale;
-        }
-
         if (CarryScript.isObject)
         {
             rb.mass = 3;
             transform.position = Player.transform.position;
-            transform.position = new Vector3(transform.position.x + offsetX, transform.position.y + offsetY, 0);
+            if(Player.transform.localScale.x > 0)
+            {
+                transform.position = new Vector3(transform.position.x + offsetX, transform.position.y + offsetY, 0);
+            }
+            else if(Player.transform.localScale.x < 0 && transform.localScale.x > 0) 
+            {
+                backCarry = true;
+                transform.position = new Vector3(transform.position.x - offsetX, transform.position.y + offsetY, 0);
+            }
+            
         }
         else
         {
