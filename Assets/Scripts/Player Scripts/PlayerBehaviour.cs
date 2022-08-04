@@ -8,7 +8,7 @@ public class PlayerBehaviour : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
-    private bool isGrounded = true;
+    public bool isGrounded = true;
     private bool isZooming;
     private Rigidbody2D rb;
     private BoxCollider2D col;
@@ -60,7 +60,7 @@ public class PlayerBehaviour : MonoBehaviour
                 rb.AddForce(new Vector2(xMove * speed, 0), ForceMode2D.Force);
             
             //Change Orientation
-            if (MovableScript.disableOri == false)
+            if (CarryScript.disableOri == false)
             {
                 Vector3 characterScale = transform.localScale;
                 if (Input.GetAxis("Horizontal") > 0)
@@ -70,11 +70,11 @@ public class PlayerBehaviour : MonoBehaviour
                 transform.localScale = characterScale;
             }
             
-            if (xMove != 0 && MovableScript.changeAnim == false)
+            if (xMove != 0 && CarryScript.changeAnim == false)
             {
                 PlayerAnimationManager.Instance.ChangeAnim("Walk");
             }       
-            else if(MovableScript.changeAnim == false)
+            else if(CarryScript.changeAnim == false)
             {
                 PlayerAnimationManager.Instance.ChangeAnim("Idle");
             }
