@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    public float speed = 5f;
-    public float jumpForce = 5f;
+    public float speed;
+    public float jumpForce;
     private bool isGrounded = true;
-    private bool isZooming = false;
+    private bool isZooming;
     private Rigidbody2D rb;
     private BoxCollider2D col;
     private float extraJumpSpace = 0.02f;
@@ -17,6 +17,8 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] private float sizeScale = 0.25f;
     float fricVal = 0f;
 
+    private float playerScale;
+    
     private Animator anim;
 
     private void Start()
@@ -26,7 +28,7 @@ public class PlayerBehaviour : MonoBehaviour
         anim = GetComponent<Animator>();
 
         anim.SetBool("Idle", true);
-
+        playerScale = transform.localScale.x;
     }
 
     void Jump()
@@ -44,8 +46,6 @@ public class PlayerBehaviour : MonoBehaviour
             isGrounded = false;
         else
             isGrounded = true;
-
-        ;
     }
     
     void Update()
@@ -53,38 +53,43 @@ public class PlayerBehaviour : MonoBehaviour
         GroundedCheck();
 
         float xMove = Input.GetAxisRaw("Horizontal");
-        if (isZooming == false)
+        if (!isZooming)
         {
-            //transform.Translate(new Vector3(xMove, 0, 0) * (speed * Time.deltaTime));
-            //rb.velocity = new Vector2(xMove * speed, rb.velocity.y);
+            //Movement
             if (Mathf.Abs(rb.velocity.x) < speed)
                 rb.AddForce(new Vector2(xMove * speed, 0), ForceMode2D.Force);
-
+            
+            //Change Orientation
+            if (MovableScript.disableOri == false)
+            {
+                Vector3 characterScale = transform.localScale;
+                if (Input.GetAxis("Horizontal") > 0)
+                    characterScale.x = playerScale;
+                else if (Input.GetAxis("Horizontal") < 0)
+                    characterScale.x = -playerScale;
+                transform.localScale = characterScale;
+            }
+            
             if (xMove != 0 && MovableScript.changeAnim == false)
             {
-                anim.SetInteger("anim", 0);
                 PlayerAnimationManager.Instance.ChangeAnim("Walk");
             }       
-            else
+            else if(MovableScript.changeAnim == false)
             {
-                if(MovableScript.changeAnim == false)
-                {
-                    anim.SetInteger("anim", 0);
-                    PlayerAnimationManager.Instance.ChangeAnim("Idle");
-                }
+                PlayerAnimationManager.Instance.ChangeAnim("Idle");
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && (isGrounded == true))
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
             {
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 PlayerAnimationManager.Instance.ChangeAnim("Jump");
+                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             }
 
-            if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetMouseButton(0) == true)
-                isZooming = true;
+            // if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetMouseButton(0))
+            //    isZooming = true;
         }
-        else if (Input.GetMouseButton(0) == false)
-            isZooming = false;
+        // else if (Input.GetMouseButton(0) == false)
+        //    isZooming = false;
 
     }
 }

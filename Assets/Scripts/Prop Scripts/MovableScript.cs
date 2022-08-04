@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovableScript : MonoBehaviour
@@ -28,12 +26,10 @@ public class MovableScript : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.RightArrow) || (Input.GetKey(KeyCode.D)))
             {
-                //anim.SetInteger("anim", 1);
                 PlayerAnimationManager.Instance.ChangeAnim("Push");
             }
             else if (Input.GetKey(KeyCode.LeftArrow) || (Input.GetKey(KeyCode.A)))
             {
-                //anim.SetInteger("anim", 2);
                 PlayerAnimationManager.Instance.ChangeAnim("Pull");
             }
         }
@@ -51,8 +47,6 @@ public class MovableScript : MonoBehaviour
                 box = hit.collider.gameObject;
                 box.GetComponent<FixedJoint2D>().enabled = true;
                 box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
-                //Debug.Log(box);
-                //Debug.Log("attached^");
                 onMove = false;
                 disconnect = true;
 
@@ -75,8 +69,6 @@ public class MovableScript : MonoBehaviour
                 changeAnim = false;
                 PlayerAnimationManager.Instance.ChangeAnim("Idle");
                 box.GetComponent<FixedJoint2D>().enabled = false;
-                //Debug.Log(box);
-                //Debug.Log("detached^");
                 disableOri = false;
                 onMove = true;
                 animMove = false;

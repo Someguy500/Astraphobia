@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MassManipulator : MonoBehaviour
 {
-   [SerializeField] public Rigidbody2D rb;
+    [SerializeField] public Rigidbody2D rb;
     [SerializeField] public BoxCollider2D bCol;
     [SerializeField] public BoxCollider2D bCol2;
 
