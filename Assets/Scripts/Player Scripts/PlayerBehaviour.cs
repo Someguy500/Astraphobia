@@ -47,17 +47,25 @@ public class PlayerBehaviour : MonoBehaviour
         else
             isGrounded = true;
     }
-    
+
+     void FixedUpdate() //added to let player's speed in editor and build to be have the same speed
+    {
+        float xMoveFU = Input.GetAxisRaw("Horizontal"); 
+
+        if (Mathf.Abs(rb.velocity.x) < speed)
+            rb.AddForce(new Vector2(xMoveFU * speed, 0), ForceMode2D.Force);
+    }
+
     void Update()
     {
         GroundedCheck();
 
-        float xMove = Input.GetAxisRaw("Horizontal");
+        float xMove = Input.GetAxisRaw("Horizontal"); //same val as xMoveFU but for the animations
         if (!isZooming)
         {
             //Movement
-            if (Mathf.Abs(rb.velocity.x) < speed)
-                rb.AddForce(new Vector2(xMove * speed, 0), ForceMode2D.Force);
+/*            if (Mathf.Abs(rb.velocity.x) < speed)
+                rb.AddForce(new Vector2(xMove * speed, 0), ForceMode2D.Force);*/ //moved to FixedUpdate
             
             //Change Orientation
             if (CarryScript.disableOri == false)

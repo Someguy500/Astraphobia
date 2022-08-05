@@ -21,8 +21,8 @@ public class MovableObject : PlayerBehaviour
     {
         float xMove = Input.GetAxisRaw("Horizontal");
 
-        if (Mathf.Abs(rb.velocity.x) < speed && CarryScript.isObject) //Movement
-            rb.AddForce(new Vector2(xMove * speed, 0), ForceMode2D.Force);
+/*        if (Mathf.Abs(rb.velocity.x) < speed && CarryScript.isObject) //Movement
+            rb.AddForce(new Vector2(xMove * speed, 0), ForceMode2D.Force);*/
 
         if (CarryScript.isObject && CarryScript.box == this.gameObject)
         {
