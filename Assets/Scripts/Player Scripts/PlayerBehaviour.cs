@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    public float speed;
+    public float speed; //ori speed is 20
     public float jumpForce;
     public bool isGrounded = true;
     private bool isZooming;
@@ -15,11 +15,10 @@ public class PlayerBehaviour : MonoBehaviour
     private float extraJumpSpace = 0.02f;
     [SerializeField] private LayerMask platLayerMask;
     [SerializeField] private float sizeScale = 0.25f;
-    float fricVal = 0f;
 
     private float playerScale;
     
-    private Animator anim;
+    public static Animator anim;
 
     private void Start()
     {
@@ -95,6 +94,16 @@ public class PlayerBehaviour : MonoBehaviour
 
             // if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetMouseButton(0))
             //    isZooming = true;
+
+            if (CarryScript.isObject)
+            {
+                speed = 8;
+            }
+            else
+            {
+                speed = 20;
+            }
+
         }
         // else if (Input.GetMouseButton(0) == false)
         //    isZooming = false;

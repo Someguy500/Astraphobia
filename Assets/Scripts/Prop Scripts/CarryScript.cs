@@ -30,20 +30,29 @@ public class CarryScript : MonoBehaviour
 
             if (playerRb.velocity.x < 0 && MovableObject.backCarry)
             {
+                anim.speed = 12;
                 PlayerAnimationManager.Instance.ChangeAnim("Push");
             }
             else if (playerRb.velocity.x > 0 && MovableObject.backCarry)
             {
+                anim.speed = 8;
                 PlayerAnimationManager.Instance.ChangeAnim("Pull");
             }
             else if (playerRb.velocity.x > 0)
             {
+                anim.speed = 12;
                 PlayerAnimationManager.Instance.ChangeAnim("Push");
             }
             else if (playerRb.velocity.x < 0)
             {
+                anim.speed = 8;
                 PlayerAnimationManager.Instance.ChangeAnim("Pull");
             }
+            else
+            {
+                anim.speed = 0;
+            }
+
         }
 
         if (hit.collider != null && Input.GetKeyDown(KeyCode.E) && animMove == false) 
@@ -60,6 +69,7 @@ public class CarryScript : MonoBehaviour
         {
             if (disconnect && transform.position.y <= -1.7)
             {
+                anim.speed = 1;
                 isObject = false;
                 changeAnim = false;
                 PlayerAnimationManager.Instance.ChangeAnim("Idle");
@@ -70,6 +80,7 @@ public class CarryScript : MonoBehaviour
             else if (hit.collider != null && Input.GetKeyDown(KeyCode.E))
             //^ disconnects the box when raycast hits nothing and input is pressed)
             {
+                anim.speed = 1;
                 isObject = false;
                 changeAnim = false;
                 PlayerAnimationManager.Instance.ChangeAnim("Idle");
