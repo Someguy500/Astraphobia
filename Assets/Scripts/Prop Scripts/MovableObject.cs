@@ -30,9 +30,10 @@ public class MovableObject : PlayerBehaviour
             transform.position = Player.transform.position;
             if(Player.transform.localScale.x > 0)
             {
+                backCarry = false;
                 transform.position = new Vector3(transform.position.x + offsetX, transform.position.y + offsetY, 0);
             }
-            else if(Player.transform.localScale.x < 0 && transform.localScale.x > 0) 
+            else if(Player.transform.localScale.x < 0) 
             {
                 backCarry = true;
                 transform.position = new Vector3(transform.position.x - offsetX, transform.position.y + offsetY, 0);
@@ -44,9 +45,5 @@ public class MovableObject : PlayerBehaviour
             rb.mass = 210;
         }
 
-        if(CarryScript.isObject)
-        {
-
-        }
     }
 }
