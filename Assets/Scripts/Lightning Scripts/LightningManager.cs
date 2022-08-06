@@ -125,6 +125,7 @@ public class LightningManager : MonoBehaviour
 
     void CreateLightning()
     {
+        
         stressManager.LightningStrike();
         postPros.LightningStrike();
         CreatePooledBolt(pos1,pos2, Color.white, 1f);

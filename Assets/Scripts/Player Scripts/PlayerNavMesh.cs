@@ -8,7 +8,7 @@ public class PlayerNavMesh : MonoBehaviour
     [SerializeField] private Transform movePositionTransform;
     [SerializeField] private GameObject player;
     private NavMeshAgent navMeshAgent;
-    private float offsetX = 1f, offsetY = 1f, frequency = 0.1f;
+    private float offsetX = 1.5f, offsetY = 1f, frequency = 0.1f;
     private float objectSize = 0.275535f;
 
     private void Awake()
@@ -19,7 +19,7 @@ public class PlayerNavMesh : MonoBehaviour
     private void Update()
     {
         float amplitudeX = 0.1f;
-        float amplitudeY = 1f;
+        float amplitudeY = 0.9f; //ori 1f
         float cosWave = Mathf.Cos(Time.time) * frequency * amplitudeX;
         float sinWave = Mathf.Sin(Time.time) * frequency * amplitudeY;
 
