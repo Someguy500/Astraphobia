@@ -10,8 +10,8 @@ public class PlayerBehaviour : MonoBehaviour
     public float jumpForce;
     public bool isGrounded = true;
     private bool isZooming;
-    private Rigidbody2D rb;
-    private BoxCollider2D col;
+    [SerializeField] private Rigidbody2D rb;
+    private CapsuleCollider2D col;
     private float extraJumpSpace = 0.02f;
     [SerializeField] private LayerMask platLayerMask;
     [SerializeField] private float sizeScale = 0.25f;
@@ -22,8 +22,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<BoxCollider2D>();
+        col = GetComponent<CapsuleCollider2D>();
         anim = GetComponent<Animator>();
 
         anim.SetBool("Idle", true);

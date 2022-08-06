@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HillSlideEvent : MonoBehaviour
 {
-    public float slideDuration = 5f;
+    public float slideDuration = 3f;
     private bool allowJump = false;
     
     private GameObject player;
