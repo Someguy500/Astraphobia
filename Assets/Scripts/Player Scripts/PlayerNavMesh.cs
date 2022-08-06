@@ -10,7 +10,6 @@ public class PlayerNavMesh : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private float offsetX = 1f, offsetY = 1f, frequency = 0.1f;
     private float objectSize = 0.275535f;
-    bool addOne = false;
 
     private void Awake()
     {

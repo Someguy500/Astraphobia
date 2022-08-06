@@ -6,7 +6,7 @@ public class MovableObject : PlayerBehaviour
 {
     [SerializeField] GameObject Player;
     public Rigidbody2D rb;
-    private float objectScale = 0.25f;
+    private BoxCollider2D col;
     float offsetX = 1f;
     float offsetY = -0.11f;
     public static bool backCarry = false;
@@ -15,6 +15,7 @@ public class MovableObject : PlayerBehaviour
     {
         rb.mass = 210;
         rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -27,6 +28,7 @@ public class MovableObject : PlayerBehaviour
         if (CarryScript.isObject && CarryScript.box == this.gameObject)
         {
             rb.mass = 3;
+            
             transform.position = Player.transform.position;
             if(Player.transform.localScale.x > 0)
             {
