@@ -30,22 +30,22 @@ public class CarryScript : MonoBehaviour
 
             if (playerRb.velocity.x < 0 && MovableObject.backCarry)
             {
-                anim.speed = 12;
+                anim.speed = 20;
                 PlayerAnimationManager.Instance.ChangeAnim("Push");
             }
             else if (playerRb.velocity.x > 0 && MovableObject.backCarry)
             {
-                anim.speed = 8;
+                anim.speed = 20;
                 PlayerAnimationManager.Instance.ChangeAnim("Pull");
             }
             else if (playerRb.velocity.x > 0)
             {
-                anim.speed = 12;
+                anim.speed = 20;
                 PlayerAnimationManager.Instance.ChangeAnim("Push");
             }
             else if (playerRb.velocity.x < 0)
             {
-                anim.speed = 8;
+                anim.speed = 20;
                 PlayerAnimationManager.Instance.ChangeAnim("Pull");
             }
             else
