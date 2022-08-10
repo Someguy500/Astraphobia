@@ -10,7 +10,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float jumpForce;
     public bool isGrounded = true;
     private bool isZooming;
-    [SerializeField] private Rigidbody2D rb;
+    public Rigidbody2D rb;
     private CapsuleCollider2D col;
     private float extraJumpSpace = 0.02f;
     [SerializeField] private LayerMask platLayerMask;

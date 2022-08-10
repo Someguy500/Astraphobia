@@ -5,8 +5,7 @@ using UnityEngine;
 public class MovableObject : PlayerBehaviour
 {
     [SerializeField] GameObject Player;
-    public Rigidbody2D rb;
-    private BoxCollider2D col;
+    //private BoxCollider2D col;
     float offsetX = 1f;
     float offsetY = -0.11f;
     public static bool backCarry = false;
@@ -15,7 +14,7 @@ public class MovableObject : PlayerBehaviour
     {
         rb.mass = 210;
         rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<BoxCollider2D>();
+        //col = GetComponent<BoxCollider2D>();
     }
 
     void Update()

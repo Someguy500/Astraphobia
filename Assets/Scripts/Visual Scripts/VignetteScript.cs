@@ -14,7 +14,7 @@ public class VignetteScript : MonoBehaviour
         if (volume.profile.TryGet(out Vignette vignette)) //Testing to see if vignette exists.
         {
             this.vignette = vignette;
-            Debug.Log("vignette");
+            //Debug.Log("vignette");
         }
         else
         {
