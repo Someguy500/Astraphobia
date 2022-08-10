@@ -11,7 +11,7 @@ public class HillSlideEvent : MonoBehaviour
     private GameObject player;
     private PlayerBehaviour playerPB;
     private Rigidbody2D playerRB;
-    private BoxCollider2D playerCol;
+    private CapsuleCollider2D playerCol;
     private Animator playerAnim;
 
     private Vector2 playerColSize;
@@ -25,7 +25,7 @@ public class HillSlideEvent : MonoBehaviour
         player = GameObject.Find("Player");
         playerPB = player.GetComponent<PlayerBehaviour>();
         playerRB = player.GetComponent<Rigidbody2D>();
-        playerCol = player.GetComponent<BoxCollider2D>();
+        playerCol = player.GetComponent<CapsuleCollider2D>();
         playerAnim = player.GetComponent<Animator>();
 
         playerColSize = playerCol.size;
