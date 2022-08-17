@@ -27,6 +27,7 @@ public class LightningManager : MonoBehaviour
     String indexName;
     private bool firstLightning = false;
     [SerializeField] VignetteScript vScript;
+    [SerializeField] SpiritStressLink spiritSL;
 
     public object SceneManagement { get; private set; }
 
@@ -95,7 +96,8 @@ public class LightningManager : MonoBehaviour
 
         IEnumerator delay(){
             yield return new WaitForSeconds(0.8f);
-            vScript.LightningStrike();
+            /*vScript.LightningStrike();*/ //replace with spiritstress
+            spiritSL.LightningLight();
             SoundManager.Instance.PlaySoundSolo("Lightning");
         }
 
@@ -129,6 +131,7 @@ public class LightningManager : MonoBehaviour
         stressManager.LightningStrike();
         postPros.LightningStrike();
         CreatePooledBolt(pos1,pos2, Color.white, 1f);
+        spiritSL.LightningLight();
         SoundManager.Instance.PlaySoundSolo("Lightning");
     }
     
