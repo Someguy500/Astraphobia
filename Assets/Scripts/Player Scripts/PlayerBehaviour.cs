@@ -11,12 +11,12 @@ public class PlayerBehaviour : MonoBehaviour
     public bool isGrounded = true;
     private bool isZooming;
     public Rigidbody2D rb;
-    private CapsuleCollider2D col;
+    public CapsuleCollider2D col;
     private float extraJumpSpace = 0.02f;
     [SerializeField] private LayerMask platLayerMask;
     [SerializeField] private float sizeScale = 0.25f;
-
     private float playerScale;
+    private bool jumpCd = false;
     
     public static Animator anim;
 
@@ -41,9 +41,20 @@ public class PlayerBehaviour : MonoBehaviour
         RaycastHit2D groundRayB = Physics2D.Raycast(new Vector2(rb.position.x-((col.size.x/2)*sizeScale), (rb.position.y+extraJumpSpace+col.size.y)*sizeScale), Vector2.right,col.size.x*sizeScale, platLayerMask);
         
         if (groundRayL.collider == null && groundRayR.collider == null && groundRayB.collider == null)
+        {
             isGrounded = false;
+        }
         else
+        {
             isGrounded = true;
+        }
+    }
+
+   IEnumerator jumpCdr()
+    {
+        jumpCd = true;
+        yield return new WaitForSeconds(2.2f);
+        jumpCd = false;
     }
 
      void FixedUpdate() //added to let player's speed in editor and build to be have the same speed
@@ -61,10 +72,11 @@ public class PlayerBehaviour : MonoBehaviour
         float xMove = Input.GetAxisRaw("Horizontal"); //same val as xMoveFU but for the animations
         if (!isZooming)
         {
+
             //Movement
-/*            if (Mathf.Abs(rb.velocity.x) < speed)
-                rb.AddForce(new Vector2(xMove * speed, 0), ForceMode2D.Force);*/ //moved to FixedUpdate
-            
+            /*            if (Mathf.Abs(rb.velocity.x) < speed)
+                            rb.AddForce(new Vector2(xMove * speed, 0), ForceMode2D.Force);*/ //moved to FixedUpdate
+
             //Change Orientation
             if (CarryScript.disableOri == false)
             {
@@ -85,10 +97,11 @@ public class PlayerBehaviour : MonoBehaviour
                 PlayerAnimationManager.Instance.ChangeAnim("Idle");
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded && CarryScript.isObject == false)
+            if (Input.GetKeyDown(KeyCode.Space) && isGrounded && CarryScript.isObject == false && jumpCd == false)
             {
                 PlayerAnimationManager.Instance.ChangeAnim("Jump");
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                StartCoroutine(jumpCdr());
             }
 
             // if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetMouseButton(0))

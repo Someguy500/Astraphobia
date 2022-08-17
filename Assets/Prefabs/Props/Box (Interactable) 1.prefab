@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 495133080}
   m_Layer: 6
   m_Name: Box (Interactable) 1
-  m_TagString: Untagged
+  m_TagString: Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,9 +162,10 @@ MonoBehaviour:
   speed: 8
   jumpForce: 1.2
   isGrounded: 1
+  rb: {fileID: 1061644715792463614}
+  col: {fileID: 0}
   platLayerMask:
     serializedVersion: 2
     m_Bits: 0
   sizeScale: 0.15
   Player: {fileID: 0}
-  rb: {fileID: 1061644715792463614}
