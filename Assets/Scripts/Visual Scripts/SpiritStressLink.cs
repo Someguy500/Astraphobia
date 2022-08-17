@@ -6,6 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class SpiritStressLink : MonoBehaviour
 {
     public Light2D spiritLight;
+    
 
     void stressGauge()
     {

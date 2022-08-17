@@ -16,8 +16,24 @@ public class PlayerNavMesh : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
+    void spiritPos()
+    {
+        if(StressManager.stressLvl >= 5 && StressManager.stressLvl < 10)
+        {
+            offsetX = Mathf.Clamp(offsetX-0.0001f, 1.3f, 1.5f);
+            offsetY = Mathf.Clamp(offsetY-0.0001f, 1.3f, 1.5f);
+        }
+        else if (StressManager.stressLvl >= 10 && StressManager.stressLvl <= 16)
+        {
+            offsetX = Mathf.Clamp(offsetX - 0.0001f, 1.2f, 1.5f);
+            offsetY = Mathf.Clamp(offsetY - 0.0001f, 1.2f, 1.5f);
+        }
+    }
+
     private void Update()
     {
+        spiritPos();
+
         float amplitudeX = 0.1f;
         float amplitudeY = 0.9f; //ori 1f
         float cosWave = Mathf.Cos(Time.time) * frequency * amplitudeX;
