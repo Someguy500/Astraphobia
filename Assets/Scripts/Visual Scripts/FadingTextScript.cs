@@ -43,10 +43,12 @@ public class FadingTextScript : MonoBehaviour
     public void Appear()
     {
         fadeIn = true;
+        fadeOut = false;
     }
 
     public void Fade()
     {
+        fadeIn = false;
         fadeOut = true;
     }
 
@@ -140,7 +142,7 @@ public class FadingTextScript : MonoBehaviour
             if (UIGrp.alpha >= 0)
             {
                 UIGrp.alpha -= Time.deltaTime;
-                if (UIGrp.alpha == 0)
+                if (UIGrp.alpha <= 0)
                 {
                     fadeOut = false;
                 }
