@@ -225,9 +225,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 50eedfffc2bbe2ff0684e3fffe85e3ffaa86e3ffbc87e3ffb489e3ff82faffffb6fafffff4ffffff326e0000926e00007a6f0000265a0200a0860200ec87020052880200
+      m_SelectedIDs: 1e880200
+      m_LastClickedID: 165918
+      m_ExpandedIDs: 50eedfffc2bbe2ff0684e3fffe85e3ffaa86e3ffbc87e3ffb489e3ff82faffffb6fafffff4ffffff326e0000926e00007a6f0000265a0200a08602006c870200ec87020052880200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -525,9 +525,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -15.774749, y: -1.6152632, z: 0.051075116}
+    m_Target: {x: 17.956066, y: -2.217469, z: 0.021548606}
     speed: 2
-    m_Value: {x: -15.774749, y: -1.6152632, z: 0.051075116}
+    m_Value: {x: 17.956066, y: -2.217469, z: 0.021548606}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -578,9 +578,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.299265
+    m_Target: 3.2851355
     speed: 2
-    m_Value: 5.299265
+    m_Value: 3.2851355
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -764,21 +764,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/Mechanics
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/Mechanics
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\UnityIL\UnityProjects\Astraphobia
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: 8a740000
-    m_LastClickedID: 29834
+    scrollPos: {x: 0, y: 180}
+    m_SelectedIDs: ca740000
+    m_LastClickedID: 29898
     m_ExpandedIDs: 00000000887400008a7400008c7400008e74000090740000927400009474000096740000987400009a7400009c7400009e740000a0740000a2740000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -832,8 +832,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 1e880200
+    m_LastClickedInstanceID: 165918
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000647300000000000066710000e6120100f81201003a7000003c700000
     m_RenameOverlay:
@@ -851,7 +851,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -921,7 +921,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -2101924
+  m_LastSelectedObjectID: 165918
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
