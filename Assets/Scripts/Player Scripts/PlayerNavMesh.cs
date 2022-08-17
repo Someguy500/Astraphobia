@@ -8,7 +8,7 @@ public class PlayerNavMesh : MonoBehaviour
     [SerializeField] private Transform movePositionTransform;
     [SerializeField] private GameObject player;
     private NavMeshAgent navMeshAgent;
-    private float offsetX = 1.5f, offsetY = 1f, frequency = 0.1f;
+    private float offsetX = 1.5f, offsetY = 1.5f, frequency = 0.1f;
     private float objectSize = 0.275535f;
 
     private void Awake()

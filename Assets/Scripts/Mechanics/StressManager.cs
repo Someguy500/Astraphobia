@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class StressManager : MonoBehaviour
 {
-    public static float stressLvl;
-    public float lightningCost; 
+    public static int stressLvl;
+    public int lightningCost; 
     private bool isDead; 
     private bool stop;
 
@@ -18,7 +18,7 @@ public class StressManager : MonoBehaviour
     }
     public void stressBuild()
     {
-        if (stressLvl >= 0 && stressLvl <= 100 && isDead == false)
+        if (stressLvl >= 0 && stressLvl <= 16 && isDead == false)
         {
             stressLvl += lightningCost; //scalable stressLvl decrement
             //Debug.Log(stressLvl);
