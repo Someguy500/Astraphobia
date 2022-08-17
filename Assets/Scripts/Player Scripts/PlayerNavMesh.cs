@@ -18,15 +18,16 @@ public class PlayerNavMesh : MonoBehaviour
 
     void spiritPos()
     {
-        if(StressManager.stressLvl >= 5 && StressManager.stressLvl < 10)
+        if(StressManager.stressLvl > 5 && StressManager.stressLvl < 10)
         {
-            offsetX = Mathf.Clamp(offsetX-0.0001f, 1.3f, 1.5f);
-            offsetY = Mathf.Clamp(offsetY-0.0001f, 1.3f, 1.9f);
+            offsetX = Mathf.Clamp(offsetX-0.001f, 1.3f, 1.5f);
+            offsetY = Mathf.Clamp(offsetY-0.001f, 1.4f, 1.9f);
         }
-        else if (StressManager.stressLvl >= 10 && StressManager.stressLvl <= 16)
+        else if (StressManager.stressLvl >= 10 && StressManager.stressLvl < 16)
         {
-            offsetX = Mathf.Clamp(offsetX - 0.0001f, 1.2f, 1.5f);
-            offsetY = Mathf.Clamp(offsetY - 0.0001f, 1.2f, 1.9f);
+            offsetX = Mathf.Clamp(offsetX - 0.001f, 1.2f, 1.5f);
+            offsetY = Mathf.Clamp(offsetY - 0.001f, 0.9f, 1.9f);
+            Debug.Log(offsetY);
         }
     }
 
