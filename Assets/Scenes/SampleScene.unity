@@ -1567,7 +1567,6 @@ GameObject:
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
   - component: {fileID: 519420037}
-  - component: {fileID: 519420038}
   m_Layer: 0
   m_Name: Volume Camera
   m_TagString: MainCamera
@@ -1752,21 +1751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3be957dec21674aa1d01eeaa90bf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightningCost: 20
---- !u!114 &519420038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c57db1bd601fdc54eb989417a1a9c879, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volume: {fileID: 519420033}
-  GlobalLight2D: {fileID: 619394801}
+  lightningCost: 1
 --- !u!1 &589418944
 GameObject:
   m_ObjectHideFlags: 0
@@ -12030,7 +12015,7 @@ PrefabInstance:
     - target: {fileID: 6013100060524302826, guid: 17be9c34fcc91f744af1020651ba22e8, type: 3}
       propertyPath: vScript
       value: 
-      objectReference: {fileID: 519420038}
+      objectReference: {fileID: 0}
     - target: {fileID: 6013100060524302826, guid: 17be9c34fcc91f744af1020651ba22e8, type: 3}
       propertyPath: spiritSL
       value: 
@@ -12120,7 +12105,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lightning Spirit
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1155190372, guid: a8b3c6f9f2b30794f956ebb5043edd6b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a8b3c6f9f2b30794f956ebb5043edd6b, type: 3}
 --- !u!1001 &7741499103823317119
 PrefabInstance:

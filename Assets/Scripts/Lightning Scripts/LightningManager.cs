@@ -14,7 +14,6 @@ public class LightningManager : MonoBehaviour
 
     private CameraZoomOutTest zoomCam;
     private StressManager stressManager;
-    private VignetteScript postPros;
 
     private List<GameObject> activeBolts;
     private List<GameObject> inactiveBolts;
@@ -26,7 +25,6 @@ public class LightningManager : MonoBehaviour
 
     String indexName;
     private bool firstLightning = false;
-    [SerializeField] VignetteScript vScript;
     [SerializeField] SpiritStressLink spiritSL;
 
     public object SceneManagement { get; private set; }
@@ -35,7 +33,6 @@ public class LightningManager : MonoBehaviour
     {
         zoomCam = GameObject.Find("Player Camera").GetComponent<CameraZoomOutTest>();
         stressManager = GameObject.Find("Volume Camera").GetComponent<StressManager>();
-        postPros = GameObject.Find("Volume Camera").GetComponent<VignetteScript>();
     }
 
     private void Start()
@@ -129,7 +126,6 @@ public class LightningManager : MonoBehaviour
     {
         
         stressManager.LightningStrike();
-        postPros.LightningStrike();
         CreatePooledBolt(pos1,pos2, Color.white, 1f);
         spiritSL.LightningLight();
         SoundManager.Instance.PlaySoundSolo("Lightning");
