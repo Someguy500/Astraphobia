@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class StressManager : MonoBehaviour
 {
     public static float stressLvl;
-    public float lightningCost = 2.5f;
+    public float lightningCost; 
     private bool isDead; 
     private bool stop;
 
@@ -62,5 +62,6 @@ public class StressManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(stressLvl);
     }
 }

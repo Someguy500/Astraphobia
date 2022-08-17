@@ -1338,6 +1338,46 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &451138416 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6385310220565586876, guid: a8b3c6f9f2b30794f956ebb5043edd6b, type: 3}
+  m_PrefabInstance: {fileID: 6385310220236722043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &451138417 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1155190373, guid: a8b3c6f9f2b30794f956ebb5043edd6b, type: 3}
+  m_PrefabInstance: {fileID: 6385310220236722043}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451138416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &451138419 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1155190370, guid: a8b3c6f9f2b30794f956ebb5043edd6b, type: 3}
+  m_PrefabInstance: {fileID: 6385310220236722043}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451138416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &451138425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451138416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b96e7f642930d48869d69545ede7ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spiritLight: {fileID: 451138419}
 --- !u!1 &454870677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,7 +1667,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 58.439983, y: -3.2657354, z: -10.152977}
+  m_LocalPosition: {x: -14.720017, y: -3.2657354, z: -10.152977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1647,7 +1687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
-  priority: 0
+  priority: 10
   blendDistance: 0
   weight: 0.5
   sharedProfile: {fileID: 11400000, guid: 949a009c62d893c4fb07de9fc0232c42, type: 2}
@@ -1712,7 +1752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3be957dec21674aa1d01eeaa90bf16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightningCost: 2.5
+  lightningCost: 20
 --- !u!114 &519420038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2629,7 +2669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831115947}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 56.939983, y: -3.2657354, z: -10.152977}
+  m_LocalPosition: {x: -16.220016, y: -3.2657354, z: -10.152977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8483,6 +8523,23 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1222401471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 493759495110279708, guid: 2e1058a51c36b8b48a6c311a621c424e, type: 3}
+  m_PrefabInstance: {fileID: 493759495910209062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1222401476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222401471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eab048df23a52847a40d460fe605aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1254785177
 GameObject:
   m_ObjectHideFlags: 0
@@ -11841,6 +11898,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6867427922359711907, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
   m_PrefabInstance: {fileID: 5215686532025973830}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &1670789330348213478 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3166946701250355369, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
+  m_PrefabInstance: {fileID: 5215686532025973830}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5215686532025973830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11848,6 +11910,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5215686531531449563, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
+      propertyPath: col
+      value: 
+      objectReference: {fileID: 1670789330348213478}
     - target: {fileID: 5730294633034031296, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -11858,7 +11924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6867427922359711907, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 56.06
+      value: -17.1
       objectReference: {fileID: 0}
     - target: {fileID: 6867427922359711907, guid: 2ee34d18f8556484dae9aecb52a441b5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11966,6 +12032,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420038}
     - target: {fileID: 6013100060524302826, guid: 17be9c34fcc91f744af1020651ba22e8, type: 3}
+      propertyPath: spiritSL
+      value: 
+      objectReference: {fileID: 451138425}
+    - target: {fileID: 6013100060524302826, guid: 17be9c34fcc91f744af1020651ba22e8, type: 3}
       propertyPath: lightningDelay
       value: 1
       objectReference: {fileID: 0}
@@ -11983,8 +12053,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1155190372, guid: a8b3c6f9f2b30794f956ebb5043edd6b, type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 451138417}
+    - target: {fileID: 1155190372, guid: a8b3c6f9f2b30794f956ebb5043edd6b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1155190372, guid: a8b3c6f9f2b30794f956ebb5043edd6b, type: 3}
       propertyPath: GlobalLight2D

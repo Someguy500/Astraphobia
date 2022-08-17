@@ -5,7 +5,6 @@ using UnityEngine;
 public class ObjectRespawnScript : MonoBehaviour
 {
     float fixedPosY = -7.06f;
-    private bool isOut = false;
     private Vector2 objOrigin;
 
     void Start()
@@ -16,7 +15,6 @@ public class ObjectRespawnScript : MonoBehaviour
     public void OutofBounds()
     {
         Respawn();
-        isOut = false;
     }
 
 
@@ -29,7 +27,6 @@ public class ObjectRespawnScript : MonoBehaviour
     {
         if (gameObject.transform.position.y <= fixedPosY)
         {
-            isOut = true;
             OutofBounds();
         }
     }

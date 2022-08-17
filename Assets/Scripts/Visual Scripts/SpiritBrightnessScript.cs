@@ -20,11 +20,12 @@ public class SpiritBrightnessScript : MonoBehaviour
     {
         StartCoroutine(Period());
         StartCoroutine(SecPeriod());
+        GlobalLight2D.enabled = false;
     }
 
     IEnumerator Period()
     {
-
+        GlobalLight2D.enabled = true;
         yield return new WaitForSeconds(0.25f);
         GlobalLight2D.intensity = 0.5f;
 
@@ -50,8 +51,7 @@ public class SpiritBrightnessScript : MonoBehaviour
 
         if (StressManager.stressLvl >= 20f)
         {
-            Debug.Log("APPLES");
-            spiritLight.pointLightOuterRadius = 2.8f;
+            spiritLight.pointLightOuterRadius = 0f;
         }
         else if (StressManager.stressLvl >= 40f)
         {
@@ -64,12 +64,10 @@ public class SpiritBrightnessScript : MonoBehaviour
         else if (StressManager.stressLvl >= 70)
         {
             spiritLight.pointLightOuterRadius = 1.4f;
-            GlobalLight2D.intensity = 0.2f;
         }
         else if (StressManager.stressLvl >= 80)
         {
             spiritLight.pointLightOuterRadius = 0.7f;
-            GlobalLight2D.intensity = 0.1f;
         }
     }
 
