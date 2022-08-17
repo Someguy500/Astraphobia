@@ -10,7 +10,7 @@ public class SpiritStressLink : MonoBehaviour
 
     void stressGauge()
     {
-        if (StressManager.stressLvl >= 16)
+        if (StressManager.stressLvl > 13) //cast 16 times
         {
             spiritLight.pointLightOuterRadius = 0;
         }
@@ -20,16 +20,16 @@ public class SpiritStressLink : MonoBehaviour
     {
         if (StressManager.stressLvl >= 0 && StressManager.stressLvl < 5)
         {
-            spiritLight.pointLightOuterRadius = 3.5f;
+            spiritLight.pointLightOuterRadius = 3.4f;
         }
         else if (StressManager.stressLvl >= 5 && StressManager.stressLvl < 10)
         {
-            spiritLight.pointLightOuterRadius = Mathf.Clamp(spiritLight.pointLightOuterRadius - 0.01f, 3.0f, 3.5f);
+            spiritLight.pointLightOuterRadius = Mathf.Clamp(spiritLight.pointLightOuterRadius - 0.01f, 2.9f, 3.5f);
             /*spiritLight.pointLightOuterRadius = 3.0f;*/
         }
-        else if (StressManager.stressLvl >= 10 && StressManager.stressLvl <= 16)
+        else if (StressManager.stressLvl >= 10 && StressManager.stressLvl < 16)
         {
-            spiritLight.pointLightOuterRadius = Mathf.Clamp(spiritLight.pointLightOuterRadius - 0.01f, 2.0f, 3.5f);
+            spiritLight.pointLightOuterRadius = Mathf.Clamp(spiritLight.pointLightOuterRadius - 0.01f, 1.9f, 3.5f);
             /*spiritLight.pointLightOuterRadius = 2.5f;*/
         }
 
@@ -38,7 +38,7 @@ public class SpiritStressLink : MonoBehaviour
 
     public void LightningStrikeStress()
     {
-        if (StressManager.stressLvl <= 16)
+        if (StressManager.stressLvl < 16)
         {
             stressGauge();
             radiusStress();

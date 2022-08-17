@@ -18,7 +18,7 @@ public class StressManager : MonoBehaviour
     }
     public void stressBuild()
     {
-        if (stressLvl >= 0 && stressLvl <= 16 && isDead == false)
+        if (stressLvl >= 0 && stressLvl < 16 && isDead == false)
         {
             stressLvl += lightningCost; //scalable stressLvl decrement
             //Debug.Log(stressLvl);
@@ -62,5 +62,9 @@ public class StressManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(stressLvl < 0)
+        {
+            stressLvl = 0;
+        }
     }
 }
