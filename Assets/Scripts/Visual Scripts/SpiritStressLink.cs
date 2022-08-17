@@ -56,7 +56,6 @@ public class SpiritStressLink : MonoBehaviour
         spiritLight.lightType = Light2D.LightType.Global;
         yield return new WaitForSeconds(0.5f);
         spiritLight.lightType = Light2D.LightType.Point;
-        Debug.Log("LIGHT");
     }
 
     private void Update()

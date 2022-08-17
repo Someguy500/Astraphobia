@@ -8,7 +8,7 @@ public class PlayerNavMesh : MonoBehaviour
     [SerializeField] private Transform movePositionTransform;
     [SerializeField] private GameObject player;
     private NavMeshAgent navMeshAgent;
-    private float offsetX = 1.5f, offsetY = 1.5f, frequency = 0.1f;
+    private float offsetX = 1.5f, offsetY = 1.9f, frequency = 0.1f;
     private float objectSize = 0.275535f;
 
     private void Awake()
@@ -21,12 +21,12 @@ public class PlayerNavMesh : MonoBehaviour
         if(StressManager.stressLvl >= 5 && StressManager.stressLvl < 10)
         {
             offsetX = Mathf.Clamp(offsetX-0.0001f, 1.3f, 1.5f);
-            offsetY = Mathf.Clamp(offsetY-0.0001f, 1.3f, 1.5f);
+            offsetY = Mathf.Clamp(offsetY-0.0001f, 1.3f, 1.9f);
         }
         else if (StressManager.stressLvl >= 10 && StressManager.stressLvl <= 16)
         {
             offsetX = Mathf.Clamp(offsetX - 0.0001f, 1.2f, 1.5f);
-            offsetY = Mathf.Clamp(offsetY - 0.0001f, 1.2f, 1.5f);
+            offsetY = Mathf.Clamp(offsetY - 0.0001f, 1.2f, 1.9f);
         }
     }
 
