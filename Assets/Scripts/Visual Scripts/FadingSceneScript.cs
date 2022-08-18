@@ -9,11 +9,11 @@ public class FadingSceneScript : MonoBehaviour
     private int sceneToLoad;
 
     void Update()
-    {  
-/*        if (Input.GetMouseButtonDown(1)) // if player reaches the end
+    {
+        if (Level1Goal.sceneNew) // if player reaches the end
         {
             FadeToScene(2);
-        }*/
+        }
 
     }
 

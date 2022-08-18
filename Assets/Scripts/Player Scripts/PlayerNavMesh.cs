@@ -27,7 +27,6 @@ public class PlayerNavMesh : MonoBehaviour
         {
             offsetX = Mathf.Clamp(offsetX - 0.001f, 1.2f, 1.5f);
             offsetY = Mathf.Clamp(offsetY - 0.001f, 0.9f, 1.9f);
-            Debug.Log(offsetY);
         }
     }
 

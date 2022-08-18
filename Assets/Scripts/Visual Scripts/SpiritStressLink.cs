@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class SpiritStressLink : MonoBehaviour
 {
     public Light2D spiritLight;
-    
+    public static bool additiveStress = false;
 
     void stressGauge()
     {
@@ -16,24 +16,25 @@ public class SpiritStressLink : MonoBehaviour
         }
     }
 
-    void radiusStress()
+    void radiusStress() //stressRadius needs to restore visual radius
     {
         if (StressManager.stressLvl >= 0 && StressManager.stressLvl < 5)
-        {
-            spiritLight.pointLightOuterRadius = 3.4f;
-        }
+            {
+                spiritLight.pointLightOuterRadius = 3.4f;
+            }
         else if (StressManager.stressLvl >= 5 && StressManager.stressLvl < 10)
-        {
-            spiritLight.pointLightOuterRadius = Mathf.Clamp(spiritLight.pointLightOuterRadius - 0.01f, 2.9f, 3.5f);
-            /*spiritLight.pointLightOuterRadius = 3.0f;*/
+            {
+            /*spiritLight.pointLightOuterRadius = Mathf.Clamp(spiritLight.pointLightOuterRadius - 0.01f, 2.9f, 3.4f);*/
+            spiritLight.pointLightOuterRadius = Mathf.Clamp(spiritLight.pointLightOuterRadius - (additiveStress ? -0.01f : 0.01f), 2.9f, 2.9f);
         }
         else if (StressManager.stressLvl >= 10 && StressManager.stressLvl < 16)
-        {
-            spiritLight.pointLightOuterRadius = Mathf.Clamp(spiritLight.pointLightOuterRadius - 0.01f, 1.9f, 3.5f);
-            /*spiritLight.pointLightOuterRadius = 2.5f;*/
+            {
+            /*spiritLight.pointLightOuterRadius = Mathf.Clamp(spiritLight.pointLightOuterRadius - 0.01f, 1.9f, 3.4f);*/
+            spiritLight.pointLightOuterRadius = Mathf.Clamp(spiritLight.pointLightOuterRadius - (additiveStress ? -0.01f : 0.01f), 1.9f, 2.9f);
         }
 
-
+        additiveStress = false;
+        Debug.Log(spiritLight.pointLightOuterRadius);
     }
 
     public void LightningStrikeStress()
@@ -56,6 +57,7 @@ public class SpiritStressLink : MonoBehaviour
         spiritLight.lightType = Light2D.LightType.Global;
         yield return new WaitForSeconds(0.5f);
         spiritLight.lightType = Light2D.LightType.Point;
+        additiveStress = false;
     }
 
     private void Update()

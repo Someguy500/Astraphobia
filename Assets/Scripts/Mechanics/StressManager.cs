@@ -7,17 +7,16 @@ public class StressManager : MonoBehaviour
 {
     public static int stressLvl;
     public static int saveSanity = 0; // saves stressLvl
-    public int lightningCost; 
+    public int lightningCost;
     private bool isDead; 
     private bool stop;
-
 
     void Start()
     {
         stop = false;
         isDead = false;
         stressLvl = saveSanity;
-   
+        
     }
 
     void Awake()//just to start off with heartbeat1
@@ -38,6 +37,7 @@ public class StressManager : MonoBehaviour
             stop = true;
             isDead = true;
             Death();
+            
         }
 
     }
@@ -47,12 +47,8 @@ public class StressManager : MonoBehaviour
         if (isDead == true)
         {
             Time.timeScale = 0; //freezes 
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             /*Time.timeScale = 1; //unfreeze*/
-            
-                      
-
-            gameObject.transform.position = PlayerFall.origin;
 
         }
     }
@@ -78,7 +74,7 @@ public class StressManager : MonoBehaviour
             stressLvl = 0;
         }
 
-
+        Debug.Log(stressLvl);
     }
     void HeartbeatSpeedCheck()
     {

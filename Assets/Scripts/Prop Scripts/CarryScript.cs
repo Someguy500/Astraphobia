@@ -52,7 +52,6 @@ public class CarryScript : MonoBehaviour
             {
                 anim.speed = 0;
             }
-
         }
 
         if (hit.collider != null && Input.GetKeyDown(KeyCode.E) && animMove == false) 
