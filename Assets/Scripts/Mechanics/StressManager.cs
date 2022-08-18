@@ -44,7 +44,7 @@ public class StressManager : MonoBehaviour
 
     public void Death()
     {
-        if (isDead == true)
+        if (isDead)
         {
             Time.timeScale = 0; //freezes 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

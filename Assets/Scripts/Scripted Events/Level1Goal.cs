@@ -12,6 +12,7 @@ public class Level1Goal : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             sceneNew = true;
+            SoundManager.Instance.StopCont();
         }
     }
 
