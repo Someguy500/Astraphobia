@@ -39,9 +39,13 @@ public class StressManager : MonoBehaviour
             Death();
             
         }
-
     }
 
+    public static void ResetStress()
+    {
+        stressLvl = saveSanity;
+    }
+    
     public void Death()
     {
         if (isDead)

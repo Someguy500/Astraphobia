@@ -26,6 +26,7 @@ public class PlayerFall : MonoBehaviour
     public void Respawn()
     {
         gameObject.transform.position = origin;
+        StressManager.ResetStress();
     }
 
     void Update()
