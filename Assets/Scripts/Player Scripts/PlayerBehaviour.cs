@@ -17,6 +17,7 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] private float sizeScale = 0.25f;
     private float playerScale;
     private bool jumpCd = false;
+    [SerializeField] private float jumpCooldown = 1f;
     
     public static Animator anim;
 
@@ -53,7 +54,7 @@ public class PlayerBehaviour : MonoBehaviour
    IEnumerator jumpCdr()
     {
         jumpCd = true;
-        yield return new WaitForSeconds(2.2f);
+        yield return new WaitForSeconds(jumpCooldown);
         jumpCd = false;
     }
 
@@ -70,52 +71,48 @@ public class PlayerBehaviour : MonoBehaviour
         GroundedCheck();
 
         float xMove = Input.GetAxisRaw("Horizontal"); //same val as xMoveFU but for the animations
-        if (!isZooming)
-        {
-
-            //Movement
-            /*            if (Mathf.Abs(rb.velocity.x) < speed)
+        if (isZooming) return;
+        //Movement
+        /*            if (Mathf.Abs(rb.velocity.x) < speed)
                             rb.AddForce(new Vector2(xMove * speed, 0), ForceMode2D.Force);*/ //moved to FixedUpdate
 
-            //Change Orientation
-            if (CarryScript.disableOri == false)
-            {
-                Vector3 characterScale = transform.localScale;
-                if (Input.GetAxis("Horizontal") > 0)
-                    characterScale.x = playerScale;
-                else if (Input.GetAxis("Horizontal") < 0)
-                    characterScale.x = -playerScale;
-                transform.localScale = characterScale;
-            }
+        //Change Orientation
+        if (CarryScript.disableOri == false)
+        {
+            Vector3 characterScale = transform.localScale;
+            if (Input.GetAxis("Horizontal") > 0)
+                characterScale.x = playerScale;
+            else if (Input.GetAxis("Horizontal") < 0)
+                characterScale.x = -playerScale;
+            transform.localScale = characterScale;
+        }
             
-            if (xMove != 0 && CarryScript.changeAnim == false)
-            {
-                PlayerAnimationManager.Instance.ChangeAnimTrigger("Walk");
-            }       
-            else if(CarryScript.changeAnim == false)
-            {
-                PlayerAnimationManager.Instance.ChangeAnimTrigger("Idle");
-            }
+        if (xMove != 0 && CarryScript.changeAnim == false)
+        {
+            PlayerAnimationManager.Instance.ChangeAnimTrigger("Walk");
+        }       
+        else if(CarryScript.changeAnim == false)
+        {
+            PlayerAnimationManager.Instance.ChangeAnimTrigger("Idle");
+        }
 
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded && CarryScript.isObject == false && jumpCd == false)
-            {
-                PlayerAnimationManager.Instance.ChangeAnimTrigger("Jump");
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                StartCoroutine(jumpCdr());
-            }
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && CarryScript.isObject == false && jumpCd == false)
+        {
+            PlayerAnimationManager.Instance.ChangeAnimTrigger("Jump");
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            StartCoroutine(jumpCdr());
+        }
 
-            // if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetMouseButton(0))
-            //    isZooming = true;
+        // if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetMouseButton(0))
+        //    isZooming = true;
 
-            if (CarryScript.isObject)
-            {
-                speed = 8;
-            }
-            else
-            {
-                speed = 20;
-            }
-
+        if (CarryScript.isObject)
+        {
+            speed = 8;
+        }
+        else
+        {
+            speed = 20;
         }
         // else if (Input.GetMouseButton(0) == false)
         //    isZooming = false;
