@@ -16,12 +16,18 @@ public class StressManager : MonoBehaviour
         isDead = false;
         stressLvl = 0;
     }
+
+    void Awake()//just to start off with heartbeat1
+    {
+        SoundManager.Instance.PlaySoundCont("heartbeat");
+    }
     public void stressBuild()
     {
         if (stressLvl >= 0 && stressLvl < 16 && isDead == false)
         {
             stressLvl += lightningCost; //scalable stressLvl decrement
             //Debug.Log(stressLvl);
+            HeartbeatSpeedCheck();
         }
         else 
         {
@@ -66,5 +72,26 @@ public class StressManager : MonoBehaviour
         {
             stressLvl = 0;
         }
+
+
     }
+    void HeartbeatSpeedCheck()
+    {
+        if (stressLvl > 5)
+        {
+            if (stressLvl > 10)
+            {
+                SoundManager.Instance.PlaySoundCont("heartbeat3");
+            }
+            else
+            {
+                SoundManager.Instance.PlaySoundCont("heartbeat2");
+            }
+        }
+        else
+        {
+            SoundManager.Instance.PlaySoundCont("heartbeat1");
+        }
+    }
+
 }

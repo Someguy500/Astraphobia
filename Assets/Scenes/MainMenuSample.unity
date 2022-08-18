@@ -367,7 +367,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 13c9dc19468306441a4abe45b30598ff, type: 3}
   - {fileID: 8300000, guid: 0c1fc60b51596bd4b92a9993cbbd078b, type: 3}
   SoundSourceSolo: {fileID: 9753040}
-  SoundEffectCont: []
+  SoundEffectCont:
+  - {fileID: 8300000, guid: bc4cf43f43913864bb6e72b060f7a75e, type: 3}
+  - {fileID: 8300000, guid: 7a0b177381bc3b049bca2de8f2931c3d, type: 3}
+  - {fileID: 8300000, guid: baa6c182cc7c0e341a05e8165e8e2efc, type: 3}
   SoundSourceCont: {fileID: 9753039}
   SoundEffectAmbi:
   - {fileID: 8300000, guid: b9e8a3ca2951540409cfe92ff078225d, type: 3}
@@ -383,10 +386,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
