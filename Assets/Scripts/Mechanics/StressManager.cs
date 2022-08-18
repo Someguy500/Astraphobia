@@ -6,15 +6,18 @@ using UnityEngine.SceneManagement;
 public class StressManager : MonoBehaviour
 {
     public static int stressLvl;
+    public static int saveSanity = 0; // saves stressLvl
     public int lightningCost; 
     private bool isDead; 
     private bool stop;
+
 
     void Start()
     {
         stop = false;
         isDead = false;
-        stressLvl = 0;
+        stressLvl = saveSanity;
+   
     }
 
     void Awake()//just to start off with heartbeat1
@@ -45,6 +48,7 @@ public class StressManager : MonoBehaviour
             Time.timeScale = 0; //freezes 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
             /*Time.timeScale = 1; //unfreeze*/
+            
                       
 
             gameObject.transform.position = PlayerFall.origin;

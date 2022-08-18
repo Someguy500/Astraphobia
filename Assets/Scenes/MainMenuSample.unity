@@ -1414,7 +1414,6 @@ GameObject:
   - component: {fileID: 580304155}
   - component: {fileID: 580304154}
   - component: {fileID: 580304153}
-  - component: {fileID: 580304157}
   - component: {fileID: 580304156}
   m_Layer: 5
   m_Name: 'LoadGameButton '
@@ -1548,18 +1547,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4064c059bc84d2745b16122fc497200e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &580304157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580304151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9814a98d39495e241997fb6292db17f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &584693370
@@ -2511,7 +2498,6 @@ GameObject:
   - component: {fileID: 1562252524}
   - component: {fileID: 1562252523}
   - component: {fileID: 1562252522}
-  - component: {fileID: 1562252526}
   - component: {fileID: 1562252525}
   m_Layer: 5
   m_Name: NewGameButton
@@ -2657,18 +2643,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4064c059bc84d2745b16122fc497200e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1562252526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562252520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9814a98d39495e241997fb6292db17f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1684438814

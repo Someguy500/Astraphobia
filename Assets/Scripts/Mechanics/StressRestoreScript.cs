@@ -10,7 +10,8 @@ public class StressRestoreScript : MonoBehaviour
     {
         if (other.tag == "Player" && restore == false)
         {
-            StressManager.stressLvl -= 6;
+            StressManager.stressLvl -= 8;
+            StressManager.saveSanity = StressManager.stressLvl;
             restore = true;           
         }
     }
