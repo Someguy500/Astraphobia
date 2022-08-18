@@ -20,6 +20,8 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] private float jumpCooldown = 1f;
     
     public static Animator anim;
+    public static bool panicFreeze = false;
+    public static bool isAirborn = false;
 
     private void Start()
     {
@@ -44,10 +46,12 @@ public class PlayerBehaviour : MonoBehaviour
         if (groundRayL.collider == null && groundRayR.collider == null && groundRayB.collider == null)
         {
             isGrounded = false;
+            isAirborn = true;
         }
         else
         {
             isGrounded = true;
+            isAirborn = false;
         }
     }
 
@@ -58,9 +62,19 @@ public class PlayerBehaviour : MonoBehaviour
         jumpCd = false;
     }
 
+    public IEnumerator stopMove()
+    {  
+        rb.isKinematic = true;
+        rb.velocity = new Vector2(0, 0);
+        yield return new WaitForSeconds(1.0f);   
+        panicFreeze = false;
+        rb.isKinematic = false;
+
+    }
+
      void FixedUpdate() //added to let player's speed in editor and build to be have the same speed
     {
-        float xMoveFU = Input.GetAxisRaw("Horizontal"); 
+        float xMoveFU = Input.GetAxisRaw("Horizontal");
 
         if (Mathf.Abs(rb.velocity.x) < speed)
             rb.AddForce(new Vector2(xMoveFU * speed, 0), ForceMode2D.Force);
@@ -68,6 +82,12 @@ public class PlayerBehaviour : MonoBehaviour
 
     void Update()
     {
+
+        if (Input.GetMouseButtonDown(0) && isGrounded)
+        {
+            StartCoroutine(stopMove());
+        }
+
         GroundedCheck();
 
         float xMove = Input.GetAxisRaw("Horizontal"); //same val as xMoveFU but for the animations
@@ -96,7 +116,7 @@ public class PlayerBehaviour : MonoBehaviour
             PlayerAnimationManager.Instance.ChangeAnimTrigger("Idle");
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && CarryScript.isObject == false && jumpCd == false)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && CarryScript.isObject == false && jumpCd == false && LightningManager.jumpStop == false)
         {
             PlayerAnimationManager.Instance.ChangeAnimTrigger("Jump");
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);

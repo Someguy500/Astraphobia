@@ -29,6 +29,8 @@ public class LightningManager : MonoBehaviour
 
     public object SceneManagement { get; private set; }
 
+    public static bool jumpStop = false;
+
     private void Awake()
     {
         zoomCam = GameObject.Find("Player Camera").GetComponent<CameraZoomOutTest>();
@@ -99,8 +101,8 @@ public class LightningManager : MonoBehaviour
         }
 
         /*if (Input.GetKey(KeyCode.Mouse0) && zoomCam.isFullZoom && cd >= lightningDelay)*/
-        if (Input.GetKey(KeyCode.Mouse0) && cd >= lightningDelay)
-        { 
+        if (Input.GetKey(KeyCode.Mouse0) && cd >= lightningDelay && PlayerBehaviour.isAirborn == false)
+        {
             RaycastHit2D hit = Physics2D.Raycast(pos1,pos2 - pos1, Vector2.Distance(pos1,pos2));
             
             Debug.DrawRay(pos1,pos2 - pos1, Color.cyan,5f);
@@ -125,11 +127,12 @@ public class LightningManager : MonoBehaviour
 
     void CreateLightning()
     {
-        
+        jumpStop = true;       
         stressManager.LightningStrike();
         CreatePooledBolt(pos1,pos2, Color.white, 1f);
         spiritSL.LightningLight();
         SoundManager.Instance.PlaySoundSolo("Lightning");
+        jumpStop = false;
     }
     
     void CreatePooledBolt(Vector2 source, Vector2 dest, Color color, float thickness)
