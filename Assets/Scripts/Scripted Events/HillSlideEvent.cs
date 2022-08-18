@@ -36,7 +36,7 @@ public class HillSlideEvent : MonoBehaviour
         playerPB.enabled = false;
         playerCol.size = new Vector2(playerCol.size.x, 1);
         sliding = true;
-        PlayerAnimationManager.Instance.ChangeAnim("Slide");
+        PlayerAnimationManager.Instance.ChangeAnimTrigger("Slide");
         //StartCoroutine(Lerp(player.transform.position, slidepoint.transform.position, slideDuration));
     }
 
@@ -64,7 +64,7 @@ public class HillSlideEvent : MonoBehaviour
             StopAllCoroutines();
             playerRB.isKinematic = true;
             StartCoroutine(LerpJump(player.transform.position, landpoint.transform.position, 1));
-            PlayerAnimationManager.Instance.ChangeAnim("Jump");
+            PlayerAnimationManager.Instance.ChangeAnimTrigger("Jump");
             playerPB.enabled = true;
         }
     }

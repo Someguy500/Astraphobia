@@ -6,11 +6,7 @@ public class PlayerAnimationManager : MonoBehaviour
 {
     public static PlayerAnimationManager Instance;
     private Animator anim;
-    private enum AnimationState
-    {
-        Idle, Walk, Jump, Slide, Push, Pull
-    }
-    
+
     private void Awake()
     {
         if (Instance != null)
@@ -23,11 +19,24 @@ public class PlayerAnimationManager : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
     }
 
-    public void ChangeAnim(string animName)
+    public void ChangeAnimTrigger(string animName)
     {
         ResetAllParams(animName);
-        anim.SetBool(animName, true);
+        anim.SetTrigger(animName);
     }
+
+    public void ChangeAnimBool(string animName)
+    {
+        anim.SetBool(animName, true);
+        StartCoroutine(DisableBool(animName));
+    }
+
+    IEnumerator DisableBool(string animName)
+    {
+        yield return new WaitForSeconds(0.5f);
+        anim.SetBool(animName,false);  
+    }
+    
 
     public void ResetAllParams(string animName)
     {

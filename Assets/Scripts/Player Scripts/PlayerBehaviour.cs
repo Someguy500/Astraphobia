@@ -90,16 +90,16 @@ public class PlayerBehaviour : MonoBehaviour
             
             if (xMove != 0 && CarryScript.changeAnim == false)
             {
-                PlayerAnimationManager.Instance.ChangeAnim("Walk");
+                PlayerAnimationManager.Instance.ChangeAnimTrigger("Walk");
             }       
             else if(CarryScript.changeAnim == false)
             {
-                PlayerAnimationManager.Instance.ChangeAnim("Idle");
+                PlayerAnimationManager.Instance.ChangeAnimTrigger("Idle");
             }
 
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded && CarryScript.isObject == false && jumpCd == false)
             {
-                PlayerAnimationManager.Instance.ChangeAnim("Jump");
+                PlayerAnimationManager.Instance.ChangeAnimTrigger("Jump");
                 rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
                 StartCoroutine(jumpCdr());
             }

@@ -31,22 +31,22 @@ public class CarryScript : MonoBehaviour
             if (playerRb.velocity.x < 0 && MovableObject.backCarry)
             {
                 anim.speed = 20;
-                PlayerAnimationManager.Instance.ChangeAnim("Push");
+                PlayerAnimationManager.Instance.ChangeAnimTrigger("Push");
             }
             else if (playerRb.velocity.x > 0 && MovableObject.backCarry)
             {
                 anim.speed = 20;
-                PlayerAnimationManager.Instance.ChangeAnim("Pull");
+                PlayerAnimationManager.Instance.ChangeAnimTrigger("Pull");
             }
             else if (playerRb.velocity.x > 0)
             {
                 anim.speed = 20;
-                PlayerAnimationManager.Instance.ChangeAnim("Push");
+                PlayerAnimationManager.Instance.ChangeAnimTrigger("Push");
             }
             else if (playerRb.velocity.x < 0)
             {
                 anim.speed = 20;
-                PlayerAnimationManager.Instance.ChangeAnim("Pull");
+                PlayerAnimationManager.Instance.ChangeAnimTrigger("Pull");
             }
             else
             {
@@ -72,7 +72,7 @@ public class CarryScript : MonoBehaviour
                 anim.speed = 1;
                 isObject = false;
                 changeAnim = false;
-                PlayerAnimationManager.Instance.ChangeAnim("Idle");
+                PlayerAnimationManager.Instance.ChangeAnimTrigger("Idle");
                 disconnect = false;            
                 disableOri = false;
                 animMove = false;
@@ -83,7 +83,7 @@ public class CarryScript : MonoBehaviour
                 anim.speed = 1;
                 isObject = false;
                 changeAnim = false;
-                PlayerAnimationManager.Instance.ChangeAnim("Idle");
+                PlayerAnimationManager.Instance.ChangeAnimTrigger("Idle");
                 disableOri = false;
                 animMove = false;
             }

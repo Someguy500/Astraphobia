@@ -112,6 +112,7 @@ public class LightningManager : MonoBehaviour
                 }
             }
             cd = 0;
+            PlayerAnimationManager.Instance.ChangeAnimBool("Panic");
             CreateLightning();
         }
          
