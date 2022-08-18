@@ -44,6 +44,7 @@ public class StressManager : MonoBehaviour
     public static void ResetStress()
     {
         stressLvl = saveSanity;
+        HeartbeatSpeedCheck();
     }
     
     public void Death()
@@ -80,7 +81,8 @@ public class StressManager : MonoBehaviour
 
         Debug.Log(stressLvl);
     }
-    void HeartbeatSpeedCheck()
+
+    static void HeartbeatSpeedCheck()
     {
         if (stressLvl > 5)
         {
