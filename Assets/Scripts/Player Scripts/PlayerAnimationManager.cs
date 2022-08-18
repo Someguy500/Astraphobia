@@ -15,7 +15,7 @@ public class PlayerAnimationManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         anim = gameObject.GetComponent<Animator>();
     }
 

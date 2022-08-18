@@ -23,6 +23,7 @@ public class StressManager : MonoBehaviour
     void Awake()//just to start off with heartbeat1
     {
         SoundManager.Instance.PlaySoundCont("heartbeat");
+        Time.timeScale = 1;
     }
     public void stressBuild()
     {
@@ -94,7 +95,7 @@ public class StressManager : MonoBehaviour
         }
         else
         {
-            SoundManager.Instance.PlaySoundCont("heartbeat1");
+            SoundManager.Instance.PlaySoundCont("heartbeat");
         }
     }
 
