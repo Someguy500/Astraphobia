@@ -43,12 +43,13 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlaySoundCont(string ContSoundName) //Footsteps
+    public void PlaySoundCont(string ContSoundName) //Heartbeats
     {
         for(int i = 0; i < SoundEffectCont.Length; i++)
         {
             if(SoundEffectCont[i].name == ContSoundName)
             {
+                SoundSourceCont.Stop();
                 SoundSourceCont.clip = SoundEffectCont[i];
                 SoundSourceCont.Play();
             }

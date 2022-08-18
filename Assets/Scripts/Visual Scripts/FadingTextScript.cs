@@ -15,9 +15,7 @@ public class FadingTextScript : MonoBehaviour
 
     public List<FloatingText> floatingTexts;
 
-    //[SerializeField] GameObject Player;
     [SerializeField] private CanvasGroup UIGrp;
-    //[SerializeField] private string[] texts = new string[5];
     public TextMeshProUGUI txt;
     Mesh mesh;
     Vector3[] vertices;
@@ -71,59 +69,6 @@ public class FadingTextScript : MonoBehaviour
 
         mesh.vertices = vertices;
         txt.canvasRenderer.SetMesh(mesh);
-
-        // if(Player.transform.position.x < -13)
-        // {
-        //     Fade();
-        // }
-        // else if (Player.transform.position.x >= -13 && Player.transform.position.x <= -7)
-        // {
-        //     txt.text = texts[0];
-        //     Appear();
-        //     if (Input.GetMouseButton(0) && txt.text == texts[0])
-        //     {
-        //         txt.text = texts[1];
-        //     }
-        // }
-        // else if (Player.transform.position.x >= -7 && Player.transform.position.x <= -4)
-        // {     
-        //     Fade();
-        // }
-        // else if (Player.transform.position.x >= -4 && Player.transform.position.x <= 3)
-        // {
-        //     txt.text = texts[2];
-        //     Appear();
-        // }
-        // else if(Player.transform.position.x > 3 && Player.transform.position.x < 18)
-        // {
-        //     Fade();
-        // }
-        // else if (Player.transform.position.x >= 18 && Player.transform.position.x <= 22)
-        // {
-        //     txt.text = texts[3];
-        //     Appear();
-        // }
-        // else if (Player.transform.position.x > 22 && Player.transform.position.x < 27) //half done
-        // {
-        //     Fade();
-        // }
-        // else if (Player.transform.position.x >= 27 && Player.transform.position.x <= 32)
-        // {
-        //     txt.text = texts[4];
-        //     Appear();
-        // }
-        // else if (Player.transform.position.x > 32) //half done
-        // {
-        //     Fade();
-        // }
-        // else if (Player.transform.position.x < -3.3)
-        // {
-        //     UIGrp.alpha = 0;
-        // }
-        // else
-        // {
-        //     Fade();
-        // }
 
         if (fadeIn)
         {

@@ -367,7 +367,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 13c9dc19468306441a4abe45b30598ff, type: 3}
   - {fileID: 8300000, guid: 0c1fc60b51596bd4b92a9993cbbd078b, type: 3}
   SoundSourceSolo: {fileID: 9753040}
-  SoundEffectCont: []
+  SoundEffectCont:
+  - {fileID: 8300000, guid: bc4cf43f43913864bb6e72b060f7a75e, type: 3}
+  - {fileID: 8300000, guid: 7a0b177381bc3b049bca2de8f2931c3d, type: 3}
+  - {fileID: 8300000, guid: baa6c182cc7c0e341a05e8165e8e2efc, type: 3}
   SoundSourceCont: {fileID: 9753039}
   SoundEffectAmbi:
   - {fileID: 8300000, guid: b9e8a3ca2951540409cfe92ff078225d, type: 3}
@@ -383,10 +386,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1411,7 +1414,6 @@ GameObject:
   - component: {fileID: 580304155}
   - component: {fileID: 580304154}
   - component: {fileID: 580304153}
-  - component: {fileID: 580304157}
   - component: {fileID: 580304156}
   m_Layer: 5
   m_Name: 'LoadGameButton '
@@ -1545,18 +1547,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4064c059bc84d2745b16122fc497200e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &580304157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580304151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9814a98d39495e241997fb6292db17f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &584693370
@@ -2508,7 +2498,6 @@ GameObject:
   - component: {fileID: 1562252524}
   - component: {fileID: 1562252523}
   - component: {fileID: 1562252522}
-  - component: {fileID: 1562252526}
   - component: {fileID: 1562252525}
   m_Layer: 5
   m_Name: NewGameButton
@@ -2654,18 +2643,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4064c059bc84d2745b16122fc497200e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1562252526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562252520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9814a98d39495e241997fb6292db17f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1684438814

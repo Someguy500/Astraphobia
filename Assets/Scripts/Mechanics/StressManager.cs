@@ -6,15 +6,24 @@ using UnityEngine.SceneManagement;
 public class StressManager : MonoBehaviour
 {
     public static int stressLvl;
+    public static int saveSanity = 0; // saves stressLvl
     public int lightningCost; 
     private bool isDead; 
     private bool stop;
+
 
     void Start()
     {
         stop = false;
         isDead = false;
-        stressLvl = 0;
+        stressLvl = saveSanity;
+   
+    }
+
+    void Awake()//just to start off with heartbeat1
+    {
+        SoundManager.Instance.PlaySoundCont("heartbeat");
+        Time.timeScale = 1;
     }
     public void stressBuild()
     {
@@ -22,6 +31,7 @@ public class StressManager : MonoBehaviour
         {
             stressLvl += lightningCost; //scalable stressLvl decrement
             //Debug.Log(stressLvl);
+            HeartbeatSpeedCheck();
         }
         else 
         {
@@ -39,6 +49,7 @@ public class StressManager : MonoBehaviour
             Time.timeScale = 0; //freezes 
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
             /*Time.timeScale = 1; //unfreeze*/
+            
                       
 
             gameObject.transform.position = PlayerFall.origin;
@@ -66,5 +77,26 @@ public class StressManager : MonoBehaviour
         {
             stressLvl = 0;
         }
+
+
     }
+    void HeartbeatSpeedCheck()
+    {
+        if (stressLvl > 5)
+        {
+            if (stressLvl > 10)
+            {
+                SoundManager.Instance.PlaySoundCont("heartbeat3");
+            }
+            else
+            {
+                SoundManager.Instance.PlaySoundCont("heartbeat2");
+            }
+        }
+        else
+        {
+            SoundManager.Instance.PlaySoundCont("heartbeat");
+        }
+    }
+
 }
