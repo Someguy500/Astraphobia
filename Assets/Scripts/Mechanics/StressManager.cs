@@ -10,6 +10,7 @@ public class StressManager : MonoBehaviour
     public int lightningCost;
     private bool isDead; 
     private bool stop;
+    private int stressChangeCheck;
 
     void Start()
     {
@@ -30,7 +31,7 @@ public class StressManager : MonoBehaviour
         {
             stressLvl += lightningCost; //scalable stressLvl decrement
             //Debug.Log(stressLvl);
-            HeartbeatSpeedCheck();
+            //HeartbeatSpeedCheck();
         }
         else 
         {
@@ -80,6 +81,12 @@ public class StressManager : MonoBehaviour
         }
 
         Debug.Log(stressLvl);
+
+        if(stressChangeCheck != stressLvl)
+        {
+            stressChangeCheck = stressLvl;
+            HeartbeatSpeedCheck();
+        }
     }
 
     static void HeartbeatSpeedCheck()
