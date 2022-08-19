@@ -129,7 +129,7 @@ public class LightningManager : MonoBehaviour
     {
         jumpStop = true;       
         stressManager.LightningStrike();
-        CreatePooledBolt(pos1,pos2, Color.white, 1f);
+        //CreatePooledBolt(pos1,pos2, Color.white, 1f);
         spiritSL.LightningLight();
         SoundManager.Instance.PlaySoundSolo("Lightning");
         jumpStop = false;
