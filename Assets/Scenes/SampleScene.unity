@@ -2764,7 +2764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floatingTexts:
   - trigger: {fileID: 2036539900}
-    text: Press W and D to move
+    text: Press A and D to move
   - trigger: {fileID: 1924916294}
     text: Press Space to Jump
   - trigger: {fileID: 1446089488}
