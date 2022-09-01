@@ -78,6 +78,8 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (Mathf.Abs(rb.velocity.x) < speed)
             rb.AddForce(new Vector2(xMoveFU * speed, 0), ForceMode2D.Force);
+
+            LightningManager.jumpStop = false;
     }
 
     void Update()
@@ -115,6 +117,12 @@ public class PlayerBehaviour : MonoBehaviour
         {
             PlayerAnimationManager.Instance.ChangeAnimTrigger("Idle");
         }
+
+/*        Debug.Log("isGrounded : " + isGrounded);
+        Debug.Log("isObject : " + CarryScript.isObject);
+        Debug.Log("jumpCd : " + jumpCd);
+        Debug.Log("jumpStop : " + LightningManager.jumpStop);
+        Debug.Log("isAirborn : " + isAirborn);*/
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded && CarryScript.isObject == false && jumpCd == false && LightningManager.jumpStop == false)
         {

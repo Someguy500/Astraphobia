@@ -80,7 +80,7 @@ public class NewLightning : MonoBehaviour
     {
         cd += Time.deltaTime;
         
-        if (Input.GetKey(KeyCode.Mouse0) && cd >= lightningCd)
+        if (Input.GetKey(KeyCode.Mouse0) && cd >= lightningCd && PlayerBehaviour.isAirborn == false)
         {
             lightning.material.color = startColor;
             CastLightning();

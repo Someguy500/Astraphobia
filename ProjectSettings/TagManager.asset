@@ -8,6 +8,7 @@ TagManager:
   - LightningInteractables
   - SoundMan
   - Box
+  - Unpushable
   layers:
   - Default
   - TransparentFX

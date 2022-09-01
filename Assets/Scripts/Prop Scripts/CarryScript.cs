@@ -25,9 +25,8 @@ public class CarryScript : MonoBehaviour
         Physics2D.queriesStartInColliders = false;
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, distance, boxMask);
 
-        if (animMove) //animation switching from push and pull
+        if (animMove && hit.collider.tag == "Box") //animation switching from push and pull
         {
-
             if (playerRb.velocity.x < 0 && MovableObject.backCarry)
             {
                 anim.speed = 20;
@@ -42,19 +41,26 @@ public class CarryScript : MonoBehaviour
             {
                 anim.speed = 20;
                 PlayerAnimationManager.Instance.ChangeAnimTrigger("Push");
+
+                if(!(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
+                {
+                    anim.speed = 0;
+                }
             }
             else if (playerRb.velocity.x < 0)
             {
                 anim.speed = 20;
                 PlayerAnimationManager.Instance.ChangeAnimTrigger("Pull");
-            }
-            else
-            {
-                anim.speed = 0;
+
+                if (!(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
+                {
+                    anim.speed = 0;
+                }
             }
         }
 
-        if (hit.collider != null && Input.GetKeyDown(KeyCode.E) && animMove == false) 
+
+        if (hit.collider != null && Input.GetKeyDown(KeyCode.E) && animMove == false && hit.collider.tag == "Box") 
         {       
             isObject = true;
             animMove = true;
@@ -72,12 +78,21 @@ public class CarryScript : MonoBehaviour
                 isObject = false;
                 changeAnim = false;
                 PlayerAnimationManager.Instance.ChangeAnimTrigger("Idle");
-                disconnect = false;            
+                disconnect = false;
                 disableOri = false;
                 animMove = false;
             }
             else if (hit.collider != null && Input.GetKeyDown(KeyCode.E))
             //^ disconnects the box when raycast hits nothing and input is pressed)
+            {
+                anim.speed = 1;
+                isObject = false;
+                changeAnim = false;
+                PlayerAnimationManager.Instance.ChangeAnimTrigger("Idle");
+                disableOri = false;
+                animMove = false;
+            }
+            else if (hit.collider.tag == "Unpushable")
             {
                 anim.speed = 1;
                 isObject = false;
